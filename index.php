@@ -1,4 +1,4 @@
-<?php include('dbUpload.php'); ?>
+<?php include_once('dbConfig.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,31 +25,39 @@
     <script src="script.js"></script>
     <script src="colorToggle.js"></script>
 
+    <h1 style="text-align: center;">Image DB</h1>
     <div id="formContainer">
-        <form id="uploadForm" method="POST" action="" enctype="multipart/form-data">
+        <form id="uploadForm" method="post" action="" enctype="multipart/form-data">
             <input class="form-control" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png" multiple />
-            <button class="btn btn-primary" type="submit" name="uploadBtn" onclick="submitForm()">UPLOAD</button>
+            <button class="btn btn-primary" type="submit" name="uploadBtn">UPLOAD</button>
+            <?php include('dbUpload.php'); ?>
         </form>
-    <!-- </div>
-    <div id="formContainer"> -->
+        <!-- </div>
+        <div id="formContainer"> -->
         <button class="btn btn-primary" id="chkboxToggle">Multi-Select Toggle</button>
-        <button class="btn btn-danger" id="">Delete Selected</button>
     </div>
     <div id="imgContainer">
-        <?php
-        $query = "SELECT * FROM image";
-        $result = mysqli_query($db, $query);
-
-        while ($data = mysqli_fetch_assoc($result)) {
-            ?>
-            <div id="imgGrid">
-                <input class="form-check-input" type="checkbox" style="display: none;"
-                    value="<?php echo $data['Filename']; ?>" />
-                <img title="Click to Zoom" src="./images/<?php echo $data['Filename']; ?>">
-            </div>
+        <form method="post" action="">
+            <button class="btn btn-danger" type="submit" name="deleteBtn">Delete Selected</button>
+            <?php include('dbDelete.php'); ?>
             <?php
-        }
-        ?>
+            $query = "SELECT * FROM image";
+            $result = mysqli_query($db, $query);
+
+            while ($data = mysqli_fetch_assoc($result)) {
+                ?>
+                <figure id="imgGrid">
+                    <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
+                        value="<?php echo $data['Filename']; ?>" />
+                    <img title="Click to Zoom" src="./images/<?php echo $data['Filename']; ?>">
+                    <figcaption>
+                        <?php echo $data['Filename']; ?>
+                    </figcaption>
+                </figure>
+                <?php
+            }
+            ?>
+        </form>
     </div>
 </body>
 

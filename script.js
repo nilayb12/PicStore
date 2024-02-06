@@ -14,11 +14,11 @@ $(document).ready(function () {
     // $("#toggle").click(function () {
     //     $("img").toggle();
     // });
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
     }
     document.getElementById('chkboxToggle').addEventListener('click', () => {
-        $('input[type=checkbox]').toggle();
+        $('.form-check-input').toggle();
     });
 // }
 });

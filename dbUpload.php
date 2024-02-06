@@ -1,6 +1,5 @@
 <?php
-$msg = '';
-$db = mysqli_connect('localhost', 'nilay.baranwal', 'Netid(0981', 'image_upload');
+include_once('dbConfig.php');
 
 if (isset($_POST['uploadBtn'])) {
     for ($i = 0; $i < count($_FILES['uploadFile']['name']); ++$i) {

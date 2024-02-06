@@ -4,12 +4,14 @@
 }
 
 #formContainer {
-    position: relative;
+    position: sticky;
+    top: 0;
     display: flex;
     width: fit-content;
     justify-content: center;
     align-items: center;
     margin: 5px auto;
+    background-color: var(--bs-body-bg);
     border-radius: 10px;
     border: 2px dashed #696969;
 }
@@ -49,4 +51,9 @@ img {
     width: 222.23px;
     height: 125px;
     cursor: pointer;
+}
+
+figcaption {
+    text-align: center;
+    font-size: small;
 }
