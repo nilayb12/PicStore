@@ -1,2 +1,2 @@
-#PicStore
+# PicStore
 An Image Hosting Solution
