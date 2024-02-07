@@ -32,15 +32,13 @@
             <button class="btn btn-primary" type="submit" name="uploadBtn">UPLOAD</button>
             <?php include('dbUpload.php'); ?>
         </form>
-        <!-- </div>
-        <div id="formContainer"> -->
         <button class="btn btn-primary" id="chkboxToggle">Multi-Select Toggle</button>
+        <button class="btn btn-danger" id="deleteBtnLink">Delete Selected</button>
     </div>
     <div id="imgContainer">
         <form method="post" action="">
-            <button class="btn btn-danger" type="submit" name="deleteBtn">Delete Selected</button>
-            <?php include('dbDelete.php'); ?>
-            <?php
+            <button class="btn" type="submit" name="deleteBtn" id="deleteBtn" style="display: none;"></button>
+            <?php include('dbDelete.php');
             $query = "SELECT * FROM image";
             $result = mysqli_query($db, $query);
 

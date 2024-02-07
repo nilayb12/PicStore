@@ -20,5 +20,8 @@ $(document).ready(function () {
     document.getElementById('chkboxToggle').addEventListener('click', () => {
         $('.form-check-input').toggle();
     });
+    $('#deleteBtnLink').click(function () {
+        $("#deleteBtn").click();
+    })
 // }
 });
