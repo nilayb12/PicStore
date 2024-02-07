@@ -33,7 +33,8 @@
             <?php include('dbUpload.php'); ?>
         </form>
         <button class="btn btn-primary" id="chkboxToggle">Multi-Select Toggle</button>
-        <button class="btn btn-danger" id="deleteBtnLink">Delete Selected</button>
+        <button class="btn btn-success" id="selectAll" style="display: none";>(De)Select All</button>
+        <button class="btn btn-danger" id="deleteBtnLink" style="display: none";>Delete Selected</button>
     </div>
     <div id="imgContainer">
         <form method="post" action="">

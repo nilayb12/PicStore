@@ -11,14 +11,13 @@ $(document).ready(function () {
     //     });
     // });
     const gallery = new Viewer(document.getElementById('imgContainer'));
-    // $("#toggle").click(function () {
-    //     $("img").toggle();
-    // });
     if (window.history.replaceState) {
         window.history.replaceState(null, null, window.location.href);
     }
     document.getElementById('chkboxToggle').addEventListener('click', () => {
         $('.form-check-input').toggle();
+        $('#selectAll').toggle();
+        $('#deleteBtnLink').toggle();
     });
     $('#deleteBtnLink').click(function () {
         $("#deleteBtn").click();
