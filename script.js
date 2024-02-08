@@ -22,5 +22,15 @@ $(document).ready(function () {
     $('#deleteBtnLink').click(function () {
         $("#deleteBtn").click();
     })
+    document.getElementById('selectAll').addEventListener('click', () => {
+        var chk = document.getElementsByName('imgSelect[]');
+        for (var i = 0; i < chk.length; ++i) {
+            if (chk[i].checked == false) {
+                chk[i].checked = true;
+            } else {
+                chk[i].checked = false;
+            }
+        }
+    });
 // }
 });

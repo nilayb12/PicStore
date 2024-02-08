@@ -23,7 +23,7 @@ form {
     width: fit-content;
     justify-content: center;
     align-items: center;
-    margin: 0 0 0 5px;
+    margin-left: 5px;
     /* padding: 5px; */
 }
 
@@ -33,6 +33,20 @@ input[type=file] {
 
 button {
     margin: 5px !important;
+}
+
+#chkboxToggle {
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+}
+
+#selectAll {
+    margin: 0 2px 5px 0 !important;
+}
+
+#deleteBtnLink {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
 }
 
 #imgContainer {
