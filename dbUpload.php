@@ -9,7 +9,7 @@ if (isset($_POST['uploadBtn'])) {
         $folder = 'images/' . $fileName;
 
         if (!empty($fileName)) {
-            $sql = "INSERT INTO image VALUES (('$data'),('$fileName'))";
+            $sql = "INSERT INTO image VALUES (('$folder'),('$fileName'))";
             mysqli_query($db, $sql);
 
             if (move_uploaded_file($tmpName, $folder)) {
