@@ -3,28 +3,10 @@
     --bs-body-bg: black !important;
 }
 
-#selectFolder {
-    position: relative;
-    display: flex;
-    width: fit-content;
-    text-overflow: '';
-    /* border-color: white;
-    outline-color: white; */
-    font: inherit;
-    padding: 5px 20px 5px 5px;
-    background-color: rgb(69, 0, 69);
-    background-position: right;
-    /* color: white;
-    border-radius: 5px;
-    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2); */
-    cursor: pointer;
-    /* transition: background .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out; */
-}
-
 form {
     display: flex;
     flex-wrap: wrap;
-    width: fit-content;
+    width: auto;
     justify-content: center;
     align-items: center;
     margin-left: 5px;
@@ -45,16 +27,37 @@ form {
     border: 2px dashed #696969;
 }
 
+#selectContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#selectFolder {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    text-overflow: '';
+    /* border-color: white;
+    outline-color: white; */
+    font: inherit;
+    padding: 5px 20px 5px 5px;
+    background-color: rgb(69, 0, 69);
+    background-position: right;
+    /* color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2); */
+    cursor: pointer;
+    /* transition: background .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out; */
+}
+
 input[type=file] {
     width: fit-content;
 }
 
 button {
     margin: 5px !important;
-}
-
-#selectButton {
-    margin: 0 !important;
 }
 
 #chkboxToggle {

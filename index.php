@@ -25,17 +25,19 @@
     <script src="colorToggle.js"></script>
 
     <div id="formContainer">
-        <form id="selectForm" method="post" action="">
-            <select class="form-select" id="selectFolder">
-                <option value="images/" selected>Root</option>
-                <?php
-                $folders = glob("images/*", GLOB_ONLYDIR);
-                foreach ($folders as $folder) {
-                    echo '<option value="' . $folder . '">' . substr($folder, 7) . '</option>';
-                }
-                ?>
-            </select>
-        </form>
+        <label id="selectContainer" for="selectFolder">Choose/Create Location:
+            <form id="selectForm" method="post" action="">
+                <select class="form-select" id="selectFolder">
+                    <option value="images/" selected>Root</option>
+                    <?php
+                    $folders = glob("images/*", GLOB_ONLYDIR);
+                    foreach ($folders as $folder) {
+                        echo '<option value="' . $folder . '">' . substr($folder, 7) . '</option>';
+                    }
+                    ?>
+                </select>
+            </form>
+        </label>
 
         <form id="uploadForm" method="post" action="" enctype="multipart/form-data">
             <input class="form-control" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png" multiple />
