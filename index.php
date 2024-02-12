@@ -22,11 +22,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.js"
         integrity="sha512-EC3CQ+2OkM+ZKsM1dbFAB6OGEPKRxi6EDRnZW9ys8LghQRAq6cXPUgXCCujmDrXdodGXX9bqaaCRtwj4h4wgSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
     <script src="colorToggle.js"></script>
 
-    <h1 style="text-align: center;">Image DB</h1>
     <div id="formContainer">
+        <form id="selectForm" method="post" action="">
+            <select class="form-select" id="selectFolder">
+                <option value="images/" selected>Root</option>
+                <?php
+                $folders = glob("images/*", GLOB_ONLYDIR);
+                foreach ($folders as $folder) {
+                    echo '<option value="' . $folder . '">' . substr($folder, 7) . '</option>';
+                }
+                ?>
+            </select>
+        </form>
+
         <form id="uploadForm" method="post" action="" enctype="multipart/form-data">
             <input class="form-control" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png" multiple />
             <button class="btn btn-primary" type="submit" name="uploadBtn">UPLOAD</button>
@@ -38,6 +48,7 @@
             <button class="btn btn-danger" id="deleteBtnLink" style="display: none" ;>Delete Selected</button>
         </div>
     </div>
+
     <div id="imgContainer">
         <form method="post" action="">
             <button class="btn" type="submit" name="deleteBtn" id="deleteBtn" style="display: none;"></button>
@@ -60,6 +71,7 @@
             ?>
         </form>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
