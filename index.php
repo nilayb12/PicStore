@@ -61,7 +61,7 @@
 
             while ($data = mysqli_fetch_assoc($result)) {
                 ?>
-                <figure id="imgGrid">
+                <figure>
                     <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
                         value="<?php echo $data['Filename']; ?>" />
                     <img title="Click to Zoom" src="./images/<?php echo $data['Filename']; ?>">

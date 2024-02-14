@@ -25,7 +25,7 @@ button {
     width: fit-content;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: auto auto 5px auto;
     /* padding: 5px; */
     background-color: var(--bs-body-bg);
     border-radius: 10px;
@@ -84,12 +84,8 @@ input[type=file] {
     height: 75vh;
 }
 
-#imgGrid {
-    margin: 5px;
-}
-
 img {
-    margin: 5px;
+    margin: 5px 10px 5px 2px;
     width: 222.23px;
     height: 125px;
     cursor: pointer;
