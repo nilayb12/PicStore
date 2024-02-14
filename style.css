@@ -81,6 +81,11 @@ input[type=file] {
     align-items: center;
 }
 
+#imgForm {
+    overflow: auto;
+    height: 75vh;
+}
+
 #imgGrid {
     margin: 5px;
 }

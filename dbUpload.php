@@ -1,5 +1,7 @@
 <?php
 include_once('dbConfig.php');
+$data = @$_POST['fold'];
+echo '<div id="tmpDiv">';
 
 if (isset($_POST['uploadBtn'])) {
     for ($i = 0; $i < count($_FILES['uploadFile']['name']); ++$i) {
@@ -20,4 +22,5 @@ if (isset($_POST['uploadBtn'])) {
         }
     }
 }
+echo '</div>';
 ?>

@@ -53,7 +53,7 @@
     </div>
 
     <div id="imgContainer">
-        <form method="post" action="">
+        <form id="imgForm" method="post" action="">
             <button class="btn" type="submit" name="deleteBtn" id="deleteBtn" style="display: none;"></button>
             <?php include('dbDelete.php');
             $query = "SELECT * FROM image";

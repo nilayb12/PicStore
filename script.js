@@ -1,13 +1,13 @@
-// document.getElementById('selectFolder').addEventListener('change', (ev) => {
-//     $.ajax({
-//         type: "POST",
-//         url: "dbUpload.php",
-//         data: { fold: ev.target.value },
-//         success: function (data) {
-//             alert(data);
-//         }
-//     })
-// });
+document.getElementById('selectFolder').addEventListener('change', (ev) => {
+    $.ajax({
+        type: "POST",
+        url: "selectFold.php",
+        data: { fold: ev.target.value },
+        success: function (data) {
+            $('#tmpDiv').html(data);
+        }
+    })
+});
 // window.onload = function () {
 // const imgClick = document.getElementsByName('img');
 // imgClick.forEach(function(i) {
