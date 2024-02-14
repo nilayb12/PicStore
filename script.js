@@ -19,7 +19,13 @@ document.getElementById('selectFolder').addEventListener('change', (ev) => {
 //         }
 //     });
 // });
-const gallery = new Viewer(document.getElementById('imgContainer'));
+const gallery = new Viewer(document.getElementById('imgContainer'), {
+    shown() {
+        document.getElementById('viewer0').addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+    }
+});
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
