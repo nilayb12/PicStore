@@ -40,12 +40,9 @@ button {
 }
 
 #selectFolder {
-    position: relative;
     display: flex;
     width: fit-content;
     text-overflow: '';
-    /* border-color: white;
-    outline-color: white; */
     font: inherit;
     padding: 5px 20px 5px 5px;
     background-color: rgb(69, 0, 69);
@@ -76,6 +73,7 @@ input[type=file] {
 }
 
 #imgContainer {
+    overflow: auto;
     display: flex;
     width: fit-content;
     justify-content: center;
@@ -83,7 +81,6 @@ input[type=file] {
 }
 
 #imgForm {
-    overflow: auto;
     height: 75vh;
 }
 
