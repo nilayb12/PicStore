@@ -27,8 +27,9 @@
     <div id="formContainer">
         <label id="selectContainer" for="selectFolder">Choose/Create Location:
             <form id="selectForm" method="post" action="">
-                <select class="form-select" id="selectFolder">
-                    <option value="images/" selected>Root</option>
+                <select class="form-select" name="selectFolder" id="selectFolder">
+                    <option value="" selected disabled>Root</option>
+                    <option value="">New Location...</option>
                     <?php
                     $folders = glob("images/*", GLOB_ONLYDIR);
                     foreach ($folders as $folder) {

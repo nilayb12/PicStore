@@ -13,6 +13,10 @@ form {
     /* padding: 5px; */
 }
 
+button {
+    margin: 5px !important;
+}
+
 #formContainer {
     position: sticky;
     top: 0;
@@ -54,10 +58,6 @@ form {
 
 input[type=file] {
     width: fit-content;
-}
-
-button {
-    margin: 5px !important;
 }
 
 #chkboxToggle {
