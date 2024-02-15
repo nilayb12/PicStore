@@ -1,7 +1,7 @@
 document.getElementById('selectFolder').addEventListener('change', (ev) => {
     $.ajax({
         type: "POST",
-        url: "selectFold.php",
+        url: "dbUpload.php",
         data: { fold: ev.target.value },
         success: function (data) {
             $('#tmpDiv').html(data);
@@ -19,6 +19,15 @@ document.getElementById('selectFolder').addEventListener('change', (ev) => {
 //         }
 //     });
 // });
+let imgs = document.getElementsByTagName('img');
+for (const img of imgs) {
+    img.style.height = window.innerHeight / 5 + 'px';
+}
+window.addEventListener('resize', () => {
+    for (const img of imgs) {
+        img.style.height = window.innerHeight / 5 + 'px';
+    }
+});
 const gallery = new Viewer(document.getElementById('imgContainer'), {
     shown() {
         document.getElementById('viewer0').addEventListener('contextmenu', (e) => {

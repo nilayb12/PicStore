@@ -86,8 +86,8 @@ input[type=file] {
 
 img {
     margin: 5px 10px 5px 2px;
-    width: 222.23px;
-    height: 125px;
+    /* width: auto;
+    height: 125px; */
     cursor: pointer;
 }
 
