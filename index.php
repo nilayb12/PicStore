@@ -63,10 +63,10 @@
                 ?>
                 <figure>
                     <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
-                        value="<?php echo $data['Filename']; ?>" />
-                    <img title="Click to Zoom" src="./images/<?php echo $data['Filename']; ?>">
+                        value="<?php echo $data['FileName']; ?>" />
+                    <img title="Click to Zoom" src="./images/<?php echo $data['FileName']; ?>">
                     <figcaption>
-                        <?php echo $data['Filename']; ?>
+                        <?php echo $data['FileName']; ?>
                     </figcaption>
                 </figure>
                 <?php
