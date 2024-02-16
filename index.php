@@ -41,15 +41,15 @@
                     <?php include('dbUpload.php'); ?>
                 </form>
                 <div class="btn-group">
-                    <button class="btn btn-primary ms-2" id="chkboxToggle">Multi-Select Toggle</button>
-                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-                        aria-expanded="false"></button>
+                    <button class="btn btn-outline-primary ms-2" id="chkboxToggle">Multi-Select Toggle</button>
+                    <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false"></button>
                     <ul class="dropdown-menu">
                         <li class="dropdown-item">
-                            <button class="btn btn-success" id="selectAll">(De)Select All</button>
+                            <button class="btn btn-outline-success" id="selectAll">(De)Select All</button>
                         </li>
                         <li class="dropdown-item">
-                            <button class="btn btn-danger" id="deleteBtnLink">Delete Selected</button>
+                            <button class="btn btn-outline-danger" id="deleteBtnLink">Delete Selected</button>
                         </li>
                     </ul>
                 </div>
