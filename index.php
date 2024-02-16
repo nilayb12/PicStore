@@ -34,15 +34,18 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="d-flex" id="uploadForm" method="post" action="" enctype="multipart/form-data">
+                <form class="d-flex me-1" id="uploadForm" method="post" action="" enctype="multipart/form-data">
                     <input class="form-control me-1" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png"
                         multiple />
                     <button class="btn btn-outline-primary" type="submit" name="uploadBtn">UPLOAD</button>
                     <?php include('dbUpload.php'); ?>
                 </form>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"></li>
+                </ul>
                 <div class="btn-group">
-                    <button class="btn btn-outline-primary ms-2" id="chkboxToggle">Multi-Select Toggle</button>
-                    <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                    <button class="btn btn-outline-primary ms-1" id="chkboxToggle">Multi-Select Toggle</button>
+                    <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split me-1"
                         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"></button>
                     <ul class="dropdown-menu">
                         <li class="dropdown-item">
@@ -56,7 +59,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"></li>
                 </ul>
-                <form class="d-flex" role="search">
+                <form class="d-flex ms-1" role="search">
                     <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
