@@ -34,30 +34,27 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex" id="uploadForm" method="post" action="" enctype="multipart/form-data">
+                    <input class="form-control me-1" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png"
+                        multiple />
+                    <button class="btn btn-outline-primary" type="submit" name="uploadBtn">UPLOAD</button>
+                    <?php include('dbUpload.php'); ?>
+                </form>
+                <div class="btn-group">
+                    <button class="btn btn-primary ms-2" id="chkboxToggle">Multi-Select Toggle</button>
+                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                        aria-expanded="false"></button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <button class="btn btn-success" id="selectAll">(De)Select All</button>
+                        </li>
+                        <li class="dropdown-item">
+                            <button class="btn btn-danger" id="deleteBtnLink">Delete Selected</button>
+                        </li>
+                    </ul>
+                </div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <form id="uploadForm" method="post" action="" enctype="multipart/form-data">
-                            <input class="form-control me-1" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png"
-                                multiple />
-                            <button class="btn btn-outline-primary" type="submit" name="uploadBtn">UPLOAD</button>
-                            <?php include('dbUpload.php'); ?>
-                        </form>
-                    </li>
-                    <li class="nav-item">
-                        <div class="btn-group">
-                            <button class="btn btn-primary ms-2" id="chkboxToggle">Multi-Select Toggle</button>
-                            <button class="btn btn-primary dropdown-toggle dropdown-toggle-split"
-                                data-bs-toggle="dropdown" aria-expanded="false"></button>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item">
-                                    <button class="btn btn-success" id="selectAll">(De)Select All</button>
-                                </li>
-                                <li class="dropdown-item">
-                                    <button class="btn btn-danger" id="deleteBtnLink">Delete Selected</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    <li class="nav-item"></li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">

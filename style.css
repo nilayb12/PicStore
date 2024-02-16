@@ -13,10 +13,6 @@ form {
     padding: 5px; */
 }
 
-#uploadForm {
-    display: flex;
-}
-
 /* input[type=file] {
     width: fit-content;
 } */
