@@ -43,7 +43,7 @@
                 <div class="btn-group">
                     <button class="btn btn-outline-primary ms-2" id="chkboxToggle">Multi-Select Toggle</button>
                     <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
-                        data-bs-toggle="dropdown" aria-expanded="false"></button>
+                        data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"></button>
                     <ul class="dropdown-menu">
                         <li class="dropdown-item">
                             <button class="btn btn-outline-success" id="selectAll">(De)Select All</button>
