@@ -19,10 +19,11 @@ if (window.history.replaceState) {
 }
 document.getElementById('chkboxToggle').addEventListener('click', () => {
     $('.form-check-input').toggle();
+    $('#chkboxDrop').toggle();
 });
 $('#deleteBtnLink').click(function () {
     $("#deleteBtn").click();
-})
+});
 document.getElementById('selectAll').addEventListener('click', () => {
     var chk = document.getElementsByName('imgSelect[]');
     for (var i = 0; i < chk.length; ++i) {
@@ -33,4 +34,3 @@ document.getElementById('selectAll').addEventListener('click', () => {
         }
     }
 });
-// }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.css"
         integrity="sha512-za6IYQz7tR0pzniM/EAkgjV1gf1kWMlVJHBHavKIvsNoUMKWU99ZHzvL6lIobjiE2yKDAKMDSSmcMAxoiWgoWA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,29 +25,33 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="colorToggle.js"></script>
 
-    <nav class="navbar navbar-expand-sm fixed-top bg-black border-bottom border-light-subtle">
+    <nav class="navbar navbar-expand-md fixed-top bg-black border-bottom border-light-subtle">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <!img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg">ImageDB
+                <img style="max-height: 32px;"
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg">ImageDB
             </a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="d-flex me-1" id="uploadForm" method="post" action="" enctype="multipart/form-data">
-                    <input class="form-control me-1" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png"
-                        multiple />
-                    <button class="btn btn-outline-primary" type="submit" name="uploadBtn">UPLOAD</button>
+                <form class="btn-group me-1" id="uploadForm" method="post" action="" enctype="multipart/form-data">
+                    <input class="form-control" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png" multiple
+                        style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
+                    <button class="btn btn-outline-primary" type="submit" name="uploadBtn"
+                        style="border-top-right-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);"><i
+                            class="bi bi-upload"></i></button>
                     <?php include('dbUpload.php'); ?>
                 </form>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item"></li>
                 </ul>
-                <div class="btn-group">
-                    <button class="btn btn-outline-primary ms-1" id="chkboxToggle">Multi-Select Toggle</button>
-                    <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split me-1"
-                        data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"></button>
+                <div class="btn-group ms-1 me-1">
+                    <button class="btn btn-outline-primary text-nowrap" id="chkboxToggle">Multi-Select Toggle</button>
+                    <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" id="chkboxDrop"
+                        style="display: none;"></button>
                     <ul class="dropdown-menu">
                         <li class="dropdown-item">
                             <button class="btn btn-outline-success" id="selectAll">(De)Select All</button>
@@ -59,9 +64,10 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"></li>
                 </ul>
-                <form class="d-flex ms-1" role="search">
-                    <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                <form class="btn-group ms-1" role="search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                        style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
+                    <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
         </div>
