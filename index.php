@@ -24,33 +24,48 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="colorToggle.js"></script>
 
-    <div id="formContainer">
-        <label id="selectContainer" for="selectFolder">Choose/Create Location:
-            <form id="selectForm" method="post" action="">
-                <select class="form-select" name="selectFolder" id="selectFolder">
-                    <option value="" selected disabled>Root</option>
-                    <option value="">New Location...</option>
-                    <?php
-                    $folders = glob("images/*", GLOB_ONLYDIR);
-                    foreach ($folders as $folder) {
-                        echo '<option value="' . $folder . '">' . substr($folder, 7) . '</option>';
-                    }
-                    ?>
-                </select>
-            </form>
-        </label>
-
-        <form id="uploadForm" method="post" action="" enctype="multipart/form-data">
-            <input class="form-control" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png" multiple />
-            <button class="btn btn-primary" type="submit" name="uploadBtn">UPLOAD</button>
-            <?php include('dbUpload.php'); ?>
-        </form>
-        <button class="btn btn-primary" id="chkboxToggle">Multi-Select Toggle</button>
-        <div class="btn-group">
-            <button class="btn btn-success" id="selectAll" style="display: none" ;>(De)Select All</button>
-            <button class="btn btn-danger" id="deleteBtnLink" style="display: none" ;>Delete Selected</button>
+    <nav class="navbar navbar-expand-sm fixed-top bg-black border-bottom border-light-subtle">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <!img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg">ImageDB
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <form id="uploadForm" method="post" action="" enctype="multipart/form-data">
+                            <input class="form-control me-1" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png"
+                                multiple />
+                            <button class="btn btn-outline-primary" type="submit" name="uploadBtn">UPLOAD</button>
+                            <?php include('dbUpload.php'); ?>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <div class="btn-group">
+                            <button class="btn btn-primary ms-2" id="chkboxToggle">Multi-Select Toggle</button>
+                            <button class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                                data-bs-toggle="dropdown" aria-expanded="false"></button>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">
+                                    <button class="btn btn-success" id="selectAll">(De)Select All</button>
+                                </li>
+                                <li class="dropdown-item">
+                                    <button class="btn btn-danger" id="deleteBtnLink">Delete Selected</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </nav>
 
     <div id="imgContainer">
         <form id="imgForm" method="post" action="">

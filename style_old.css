@@ -1,0 +1,97 @@
+[data-bs-theme=dark] {
+    --bs-body-color: white !important;
+    --bs-body-bg: black !important;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    /* padding: 5px; */
+    user-select: none;
+}
+
+button {
+    margin: 5px !important;
+}
+
+#formContainer {
+    position: sticky;
+    top: 0;
+    /* display: flex; */
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto 5px auto;
+    /* padding: 5px; */
+    background-color: var(--bs-body-bg);
+    border-radius: 10px;
+    border: 2px dashed #696969;
+}
+
+#selectContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#selectFolder {
+    display: flex;
+    width: fit-content;
+    text-overflow: '';
+    font: inherit;
+    padding: 5px 20px 5px 5px;
+    background-color: rgb(69, 0, 69);
+    background-position: right;
+    /* color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2); */
+    cursor: pointer;
+    /* transition: background .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out; */
+}
+
+input[type=file] {
+    width: fit-content;
+}
+
+#chkboxToggle {
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+}
+
+#selectAll {
+    margin: 0 2px 5px 0 !important;
+}
+
+#deleteBtnLink {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+}
+
+#imgContainer {
+    overflow: auto;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+#imgForm {
+    height: 75vh;
+}
+
+img {
+    margin: 5px 10px 5px 2px;
+    /* width: auto;
+    height: 125px; */
+    cursor: pointer;
+}
+
+figcaption {
+    text-align: center;
+    font-size: small;
+}

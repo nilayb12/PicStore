@@ -1,24 +1,3 @@
-document.getElementById('selectFolder').addEventListener('change', (ev) => {
-    $.ajax({
-        type: "POST",
-        url: "dbUpload.php",
-        data: { fold: ev.target.value },
-        success: function (data) {
-            $('#tmpDiv').html(data);
-        }
-    })
-});
-// window.onload = function () {
-// const imgClick = document.getElementsByName('img');
-// imgClick.forEach(function(i) {
-//     i.addEventListener('click', () => {
-//         if (document.fullscreenElement) {
-//             document.exitFullscreen();
-//         } else {
-//             i.requestFullscreen();
-//         }
-//     });
-// });
 let imgs = document.getElementsByTagName('img');
 for (const img of imgs) {
     img.style.height = window.innerHeight / 5 + 'px';
@@ -40,8 +19,6 @@ if (window.history.replaceState) {
 }
 document.getElementById('chkboxToggle').addEventListener('click', () => {
     $('.form-check-input').toggle();
-    $('#selectAll').toggle();
-    $('#deleteBtnLink').toggle();
 });
 $('#deleteBtnLink').click(function () {
     $("#deleteBtn").click();
