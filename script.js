@@ -19,12 +19,14 @@ if (window.history.replaceState) {
 }
 document.getElementById('chkboxToggle').addEventListener('click', () => {
     $('.form-check-input').toggle();
-    $('#chkboxDrop').toggle();
+    $('#selectAll').toggle();
+    $('#deleteBtnLink').toggle();
+    // $('#chkboxDrop').toggle();
 });
 $('#deleteBtnLink').click(function () {
     $("#deleteBtn").click();
 });
-document.getElementById('selectAll').addEventListener('click', () => {
+$('#selectAll').click(function () {
     var chk = document.getElementsByName('imgSelect[]');
     for (var i = 0; i < chk.length; ++i) {
         if (chk[i].checked == false) {
@@ -33,4 +35,6 @@ document.getElementById('selectAll').addEventListener('click', () => {
             chk[i].checked = false;
         }
     }
+    $(this).toggleClass('btn-outline-success btn-outline-warning')
+    $(this).find('i').toggleClass('bi-check-square bi-x-square');
 });

@@ -48,18 +48,23 @@
                     <li class="nav-item"></li>
                 </ul>
                 <div class="btn-group ms-1 me-1">
-                    <button class="btn btn-outline-primary text-nowrap" id="chkboxToggle">Multi-Select Toggle</button>
-                    <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                    <button class="btn btn-outline-primary text-nowrap" id="chkboxToggle"><i
+                            class="bi bi-ui-checks-grid"></i></button>
+                    <button class="btn btn-outline-success" id="selectAll" style="display: none;"><i
+                            class="bi bi-check-square"></i></button>
+                    <button class="btn btn-outline-danger" id="deleteBtnLink" style="display: none;"><i
+                            class="bi bi-trash-fill"></i></button>
+                    <!-- <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
                         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" id="chkboxDrop"
                         style="display: none;"></button>
                     <ul class="dropdown-menu">
                         <li class="dropdown-item">
-                            <button class="btn btn-outline-success" id="selectAll">(De)Select All</button>
+                            <button class="btn btn-outline-success" id="selectAll"><i
+                                    class="bi bi-check-square"></i></button>
+                            <button class="btn btn-outline-danger" id="deleteBtnLink"><i
+                                    class="bi bi-trash-fill"></i></button>
                         </li>
-                        <li class="dropdown-item">
-                            <button class="btn btn-outline-danger" id="deleteBtnLink">Delete Selected</button>
-                        </li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"></li>
