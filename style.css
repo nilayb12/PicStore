@@ -3,6 +3,11 @@
     --bs-body-bg: black !important;
 }
 
+#brand-logo {
+    max-height: 32px;
+    margin: 0 5px 0 0;
+}
+
 form {
     /* display: flex;
     flex-wrap: wrap; */
@@ -16,7 +21,7 @@ form {
 input[type=file]::file-selector-button {}
 
 #imgContainer {
-    padding-top: 4.5rem;
+    padding-top: 4rem;
     overflow: auto;
     display: flex;
     width: fit-content;

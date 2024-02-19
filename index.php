@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-md fixed-top bg-black border-bottom border-light-subtle">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img style="max-height: 32px;"
+                <img id="brand-logo"
                     src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg">ImageDB
             </a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
