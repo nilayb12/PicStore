@@ -21,7 +21,7 @@ form {
 input[type=file]::file-selector-button {}
 
 #imgContainer {
-    padding-top: 4rem;
+    /* padding-top: 4rem; */
     overflow: auto;
     display: flex;
     width: fit-content;

@@ -25,7 +25,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="colorToggle.js"></script>
 
-    <nav class="navbar navbar-expand-md fixed-top bg-black border-bottom border-light-subtle">
+    <nav class="navbar navbar-expand-md sticky-top bg-black border-bottom border-light-subtle">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img id="brand-logo"
