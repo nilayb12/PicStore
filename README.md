@@ -7,7 +7,7 @@ An Image Hosting Solution
    2. Make sure to give Proper Permissions and Level of Access to this Account.
 3. Make 2 Columns in your Table with `FileName` as the Second Column, and both type TEXT/VARCHAR.
 4. Clone the Project in `C:\xampp\htdocs`.
-5. Create your own `db.Config.php` as follows (Remove the existing one):
+5. Create your own `dbConfig.php` as follows (Remove the existing one):
 ```php
 <?php
 $db = mysqli_connect('localhost', 'YOUR_ACCOUNT_USERNAME', 'YOUR_ACCOUNT_PASSWORD', 'DB_NAME');
