@@ -38,8 +38,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="btn-group me-1" id="uploadForm" method="post" action="" enctype="multipart/form-data">
                     <input class="form-control" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png" multiple
-                        style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
-                    <button class="btn btn-outline-primary" type="submit" name="uploadBtn"
+                        title="Select Images" style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
+                    <button class="btn btn-outline-primary" type="submit" name="uploadBtn" title="Upload"
                         style="border-top-right-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);"><i
                             class="bi bi-upload"></i></button>
                     <?php include('dbUpload.php'); ?>
@@ -48,12 +48,12 @@
                     <li class="nav-item"></li>
                 </ul>
                 <div class="btn-group ms-1 me-1">
-                    <button class="btn btn-outline-primary text-nowrap" id="chkboxToggle"><i
+                    <button class="btn btn-outline-primary text-nowrap" id="chkboxToggle" title="Multi-Select Toggle"><i
                             class="bi bi-ui-checks-grid"></i></button>
-                    <button class="btn btn-outline-success" id="selectAll" style="display: none;"><i
-                            class="bi bi-check-square"></i></button>
-                    <button class="btn btn-outline-danger" id="deleteBtnLink" style="display: none;"><i
-                            class="bi bi-trash-fill"></i></button>
+                    <button class="btn btn-outline-success" id="selectAll" title="(De)Select All"
+                        style="display: none;"><i class="bi bi-check-square"></i></button>
+                    <button class="btn btn-outline-danger" id="deleteBtnLink" title="Delete Selected"
+                        style="display: none;"><i class="bi bi-trash-fill"></i></button>
                     <!-- <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
                         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" id="chkboxDrop"
                         style="display: none;"></button>
@@ -72,7 +72,8 @@
                 <form class="btn-group ms-1" role="search">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search"
                         style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
-                    <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+                    <button class="btn btn-outline-primary" type="submit" title="Search"><i
+                            class="bi bi-search"></i></button>
                 </form>
             </div>
         </div>
