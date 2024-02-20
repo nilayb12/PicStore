@@ -25,7 +25,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="colorToggle.js"></script>
 
-    <nav class="navbar navbar-expand-md sticky-top bg-black border-bottom border-light-subtle">
+    <nav class="navbar navbar-expand-md sticky-top bg-secondary-subtle border-bottom border-light-subtle">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img id="brand-logo"
@@ -87,11 +87,11 @@
 
             while ($data = mysqli_fetch_assoc($result)) {
                 ?>
-                <figure>
+                <figure class="figure">
                     <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
                         value="<?php echo $data['FileName']; ?>" />
-                    <img title="Click to Zoom" src="./images/<?php echo $data['FileName']; ?>">
-                    <figcaption>
+                    <img class="figure-img img-fluid" title="Click to Zoom" src="./images/<?php echo $data['FileName']; ?>">
+                    <figcaption class="figure-caption">
                         <?php echo $data['FileName']; ?>
                     </figcaption>
                 </figure>
