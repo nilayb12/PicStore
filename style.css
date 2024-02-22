@@ -3,9 +3,9 @@
     --bs-body-bg: black !important;
 }
 
-#brand-logo {
+#brand-logo, #app-logo {
     max-height: 32px;
-    margin: 0 5px 0 0;
+    margin: 0;
 }
 
 form {

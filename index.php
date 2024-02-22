@@ -30,8 +30,8 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img id="brand-logo"
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg">ImageDB
-            </a>
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg"><img id="app-logo"
+                    src="Image DB-logos_white_Edit.png"></a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
