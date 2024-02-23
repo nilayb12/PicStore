@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.css"
         integrity="sha512-za6IYQz7tR0pzniM/EAkgjV1gf1kWMlVJHBHavKIvsNoUMKWU99ZHzvL6lIobjiE2yKDAKMDSSmcMAxoiWgoWA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Image Uploader</title>
+    <title>Image DB</title>
 </head>
 
 <body>
@@ -29,9 +29,9 @@
     <nav class="navbar navbar-expand-md sticky-top bg-secondary-subtle border-bottom border-light-subtle">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img id="brand-logo"
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg"><img id="app-logo"
-                    src="Image DB-logos_white_Edit.png"></a>
+                <img id="brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg">
+                <!img id="app-logo" src="Image DB-logos_white_Edit.png">Image DB
+            </a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
