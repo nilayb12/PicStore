@@ -1,4 +1,7 @@
-<?php include_once('dbConfig.php'); ?>
+<?php
+include_once('dbConfig.php');
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -75,6 +78,7 @@
                         style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
                     <button class="btn btn-outline-primary" type="submit" title="Search"><i
                             class="bi bi-search"></i></button>
+                    <?php include('dbSearch.php'); ?>
                 </form>
             </div>
         </div>
