@@ -15,6 +15,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.css"
         integrity="sha512-za6IYQz7tR0pzniM/EAkgjV1gf1kWMlVJHBHavKIvsNoUMKWU99ZHzvL6lIobjiE2yKDAKMDSSmcMAxoiWgoWA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <?php include('delConfirm.php'); ?>
     <title>Image DB</title>
 </head>
 
@@ -56,8 +57,9 @@ session_start();
                             class="bi bi-ui-checks-grid"></i></button>
                     <button class="btn btn-outline-success" id="selectAll" title="(De)Select All"
                         style="display: none;"><i class="bi bi-check-square"></i></button>
-                    <button class="btn btn-outline-danger" id="deleteBtnLink" title="Delete Selected"
-                        style="display: none;"><i class="bi bi-trash-fill"></i></button>
+                    <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delModal"
+                        id="deleteBtnLink" title="Delete Selected" style="display: none;"><i
+                            class="bi bi-trash-fill"></i></button>
                     <!-- <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
                         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" id="chkboxDrop"
                         style="display: none;"></button>

@@ -23,7 +23,7 @@ document.getElementById('chkboxToggle').addEventListener('click', () => {
     $('#deleteBtnLink').toggle();
     // $('#chkboxDrop').toggle();
 });
-$('#deleteBtnLink').click(function () {
+$('#delConfirm').click(function () {
     $("#deleteBtn").click();
 });
 $('#selectAll').click(function () {
