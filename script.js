@@ -36,5 +36,5 @@ $('#selectAll').click(function () {
         }
     }
     $(this).toggleClass('btn-outline-success btn-outline-warning')
-    $(this).find('i').toggleClass('bi-check-square bi-x-square');
+    $(this).find('i').toggleClass('bi-check-square-fill bi-x-square-fill');
 });
