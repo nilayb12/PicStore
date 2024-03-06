@@ -15,7 +15,6 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.css"
         integrity="sha512-za6IYQz7tR0pzniM/EAkgjV1gf1kWMlVJHBHavKIvsNoUMKWU99ZHzvL6lIobjiE2yKDAKMDSSmcMAxoiWgoWA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <?php include('delConfirm.php'); ?>
     <title>Image DB</title>
 </head>
 
@@ -29,6 +28,7 @@ session_start();
         integrity="sha512-EC3CQ+2OkM+ZKsM1dbFAB6OGEPKRxi6EDRnZW9ys8LghQRAq6cXPUgXCCujmDrXdodGXX9bqaaCRtwj4h4wgSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="colorToggle.js"></script>
+    <?php include('confirmModal.php'); ?>
 
     <nav class="navbar navbar-expand-md sticky-top bg-secondary-subtle border-bottom border-light-subtle">
         <div class="container-fluid">
@@ -71,6 +71,10 @@ session_start();
                                     class="bi bi-trash-fill"></i></button>
                         </li>
                     </ul> -->
+                    <!-- <p>
+                        <!?php $fileCount = new FilesystemIterator('images/');
+                        printf("%d Images", iterator_count($fileCount)); ?>
+                    </p> -->
                 </div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"></li>

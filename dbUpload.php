@@ -6,18 +6,25 @@ if (isset($_POST['uploadBtn'])) {
 
         $fileName = $_FILES['uploadFile']['name'][$i];
         $tmpName = $_FILES['uploadFile']['tmp_name'][$i];
-        $folder = 'images/' . $fileName;
+        $filePath = 'images/' . $fileName;
 
         if (!empty($fileName)) {
-            $sql = "INSERT INTO image VALUES (('$folder'),('$fileName'))";
-            mysqli_query($db, $sql);
-
-            if (move_uploaded_file($tmpName, $folder)) {
-                echo '';
+            $sql = "INSERT INTO image VALUES (('$filePath'),('$fileName'))";
+            if (file_exists($filePath)) {
+                echo "<script type='text/javascript'>
+                    $(document).ready(function(){
+                        $('#uplModal').modal('show');
+                    });
+                </script>";
             } else {
-                echo '';
+                mysqli_query($db, $sql);
+                move_uploaded_file($tmpName, $filePath);
             }
         }
     }
+}
+if (isset($_POST['uplConfirm'])) {
+    mysqli_query($db, $sql);
+    move_uploaded_file($tmpName, $filePath);
 }
 ?>
