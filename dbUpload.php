@@ -16,6 +16,9 @@ if (isset($_POST['uploadBtn'])) {
                         $('#uplModal').modal('show');
                     });
                 </script>";
+                if (isset($_POST['uplConfirm'])) {
+                    move_uploaded_file($tmpName, $filePath);
+                }
             } else {
                 mysqli_query($db, $sql);
                 move_uploaded_file($tmpName, $filePath);
@@ -24,7 +27,6 @@ if (isset($_POST['uploadBtn'])) {
     }
 }
 if (isset($_POST['uplConfirm'])) {
-    mysqli_query($db, $sql);
     move_uploaded_file($tmpName, $filePath);
 }
 ?>
