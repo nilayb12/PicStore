@@ -7,6 +7,7 @@ window.addEventListener('resize', () => {
         img.style.height = window.innerHeight / 5 + 'px';
     }
 });
+
 const gallery = new Viewer(document.getElementById('imgContainer'), {
     shown() {
         document.getElementById('viewer0').addEventListener('contextmenu', (e) => {
@@ -14,37 +15,58 @@ const gallery = new Viewer(document.getElementById('imgContainer'), {
         });
     }
 });
+
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
+
 document.getElementById('chkboxToggle').addEventListener('click', () => {
     $('.form-check-input').toggle();
     $('#selectAll').toggle();
     $('#deleteBtnLink').toggle();
     // $('#chkboxDrop').toggle();
 });
+
 $('#delConfirm').click(function () {
     $("#deleteBtn").click();
 });
-$('#uplConfirm').click(function () {
-    $.ajax({
-        type: "POST",
-        url: "dbUpload.php",
-        data: { action: "true" },
-        success: function (data) {
-            alert(data);
+
+var imgNames = document.querySelectorAll('.figure-caption');
+document.getElementById('searchBox').addEventListener('keyup', (e) => {
+    imgNames.forEach((imgName) => {
+        if (!imgName.innerHTML.toLowerCase().includes(e.target.value)) {
+            imgName.parentElement.style.display = 'none';
+        } else {
+            imgName.parentElement.style.display = 'inline-block';
         }
-    })
+    });
 });
+// $('#uplConfirm').click(function () {
+//     $.ajax({
+//         type: "POST",
+//         url: "dbUpload.php",
+//         data: { action: "true" },
+//         success: function (data) {
+//             alert(data);
+//         }
+//     })
+// });
 $('#selectAll').click(function () {
     var chk = document.getElementsByName('imgSelect[]');
-    for (var i = 0; i < chk.length; ++i) {
-        if (chk[i].checked == false) {
-            chk[i].checked = true;
+    // for (var i = 0; i < chk.length; ++i) {
+    //     if (chk[i].checked == false) {
+    //         chk[i].checked = true;
+    //     } else {
+    //         chk[i].checked = false;
+    //     }
+    // }
+    chk.forEach((chk) => {
+        if (chk.checked == false && chk.parentElement.style.display == 'inline-block') {
+            chk.checked = true;
         } else {
-            chk[i].checked = false;
+            chk.checked = false;
         }
-    }
+    });
     $(this).toggleClass('btn-outline-success btn-outline-warning')
     $(this).find('i').toggleClass('bi-check-square-fill bi-x-square-fill');
 });

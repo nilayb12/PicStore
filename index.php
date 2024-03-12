@@ -80,9 +80,9 @@ session_start();
                     <li class="nav-item"></li>
                 </ul>
                 <form class="btn-group ms-1" role="search">
-                    <input class="form-control" type="search" name="searchBox" placeholder="Search" aria-label="Search"
+                    <input class="form-control" type="search" id="searchBox" placeholder="Search" aria-label="Search"
                         style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
-                    <button class="btn btn-outline-primary" type="submit" name="searchBtn" title="Search">
+                    <button class="btn btn-outline-primary" type="submit" title="Search" disabled>
                         <i class="bi bi-search"></i></button>
                     <?php include('dbSearch.php'); ?>
                 </form>
