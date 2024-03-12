@@ -33,7 +33,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i> Cancel</button>
-                <form method="post">
+                <form method="post" action="">
                     <button class="btn btn-info" type="submit" id="uplConfirm">
                         <i class="bi bi-check-lg"></i> Replace</button>
                 </form>

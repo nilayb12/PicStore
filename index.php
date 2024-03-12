@@ -45,21 +45,21 @@ session_start();
                     <input class="form-control" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png" multiple
                         title="Select Images" style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
                     <button class="btn btn-outline-primary" type="submit" name="uploadBtn" title="Upload"
-                        style="border-top-right-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);"><i
-                            class="bi bi-upload"></i></button>
+                        style="border-top-right-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);">
+                        <i class="bi bi-upload"></i></button>
                     <?php include('dbUpload.php'); ?>
                 </form>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item"></li>
                 </ul>
                 <div class="btn-group ms-1 me-1">
-                    <button class="btn btn-outline-primary text-nowrap" id="chkboxToggle" title="Multi-Select Toggle"><i
-                            class="bi bi-ui-checks-grid"></i></button>
+                    <button class="btn btn-outline-primary text-nowrap" id="chkboxToggle" title="Multi-Select Toggle">
+                        <i class="bi bi-ui-checks-grid"></i></button>
                     <button class="btn btn-outline-success" id="selectAll" title="(De)Select All"
                         style="display: none;"><i class="bi bi-check-square-fill"></i></button>
                     <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delModal"
-                        id="deleteBtnLink" title="Delete Selected" style="display: none;"><i
-                            class="bi bi-trash-fill"></i></button>
+                        id="deleteBtnLink" title="Delete Selected" style="display: none;">
+                        <i class="bi bi-trash-fill"></i></button>
                     <!-- <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
                         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" id="chkboxDrop"
                         style="display: none;"></button>
@@ -80,10 +80,10 @@ session_start();
                     <li class="nav-item"></li>
                 </ul>
                 <form class="btn-group ms-1" role="search">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                    <input class="form-control" type="search" name="searchBox" placeholder="Search" aria-label="Search"
                         style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
-                    <button class="btn btn-outline-primary" type="submit" title="Search"><i
-                            class="bi bi-search"></i></button>
+                    <button class="btn btn-outline-primary" type="submit" name="searchBtn" title="Search">
+                        <i class="bi bi-search"></i></button>
                     <?php include('dbSearch.php'); ?>
                 </form>
             </div>

@@ -26,6 +26,16 @@ document.getElementById('chkboxToggle').addEventListener('click', () => {
 $('#delConfirm').click(function () {
     $("#deleteBtn").click();
 });
+$('#uplConfirm').click(function () {
+    $.ajax({
+        type: "POST",
+        url: "dbUpload.php",
+        data: { action: "true" },
+        success: function (data) {
+            alert(data);
+        }
+    })
+});
 $('#selectAll').click(function () {
     var chk = document.getElementsByName('imgSelect[]');
     for (var i = 0; i < chk.length; ++i) {
