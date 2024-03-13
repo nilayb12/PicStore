@@ -32,13 +32,15 @@ $('#delConfirm').click(function () {
 });
 
 var imgNames = document.querySelectorAll('.figure-caption');
-document.getElementById('searchBox').addEventListener('keyup', (e) => {
-    imgNames.forEach((imgName) => {
-        if (!imgName.innerHTML.toLowerCase().includes(e.target.value)) {
-            imgName.parentElement.style.display = 'none';
-        } else {
-            imgName.parentElement.style.display = 'inline-block';
-        }
+['keyup', 'click'].forEach(function (e) {
+    document.getElementById('searchBox').addEventListener(e, (e) => {
+        imgNames.forEach((imgName) => {
+            if (!imgName.innerHTML.toLowerCase().includes(e.target.value)) {
+                imgName.parentElement.style.display = 'none';
+            } else {
+                imgName.parentElement.style.display = 'inline-block';
+            }
+        });
     });
 });
 // $('#uplConfirm').click(function () {
@@ -51,8 +53,9 @@ document.getElementById('searchBox').addEventListener('keyup', (e) => {
 //         }
 //     })
 // });
+var chk = document.getElementsByName('imgSelect[]');
+document.getElementById('imgCount').innerText = chk.length;
 $('#selectAll').click(function () {
-    var chk = document.getElementsByName('imgSelect[]');
     // for (var i = 0; i < chk.length; ++i) {
     //     if (chk[i].checked == false) {
     //         chk[i].checked = true;
@@ -61,7 +64,7 @@ $('#selectAll').click(function () {
     //     }
     // }
     chk.forEach((chk) => {
-        if (chk.checked == false && chk.parentElement.style.display == 'inline-block') {
+        if (chk.checked == false) {
             chk.checked = true;
         } else {
             chk.checked = false;

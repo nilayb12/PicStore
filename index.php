@@ -99,11 +99,11 @@ session_start();
 
             while ($data = mysqli_fetch_assoc($result)) {
                 ?>
-                <figure class="figure">
+                <figure class="figure !card">
                     <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
                         value="<?php echo $data['FileName']; ?>" />
                     <img class="figure-img img-fluid" title="Click to Zoom" src="./images/<?php echo $data['FileName']; ?>">
-                    <figcaption class="figure-caption">
+                    <figcaption class="figure-caption !card-title">
                         <?php echo $data['FileName']; ?>
                     </figcaption>
                 </figure>
@@ -112,6 +112,22 @@ session_start();
             ?>
         </form>
     </div>
+
+    <nav class="navbar bg-secondary-subtle border-top border-light-subtle !justify-content-center"
+        aria-label="Page Navigation">
+        <ul class="pagination">
+            <li class="page-item" title="First"><a class="page-link" href="#"><i class="bi bi-chevron-bar-left"></i></a>
+            </li>
+            <li class="page-item" title="Previous"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">x</a></li>
+            <li class="page-item" title="Next"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a>
+            </li>
+            <li class="page-item" title="Last"><a class="page-link" href="#"><i class="bi bi-chevron-bar-right"></i></a>
+            </li>
+        </ul>
+        <p class="alert alert-primary">Showing <span id="imgCount">x</span> Images</p>
+    </nav>
     <script src="script.js"></script>
 </body>
 
