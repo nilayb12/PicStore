@@ -32,9 +32,9 @@ session_start();
 
     <nav class="navbar navbar-expand-md sticky-top bg-secondary-subtle border-bottom border-light-subtle">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="">
                 <img id="brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg">
-                <!img id="app-logo" src="Image DB-logos_white_Edit.png">Image DB
+                <!img id="app-logo" src="Image DB-logos_white_Edit.png">Image DB    
             </a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@ session_start();
                         style="display: none;"><i class="bi bi-check-square-fill"></i></button>
                     <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delModal"
                         id="deleteBtnLink" title="Delete Selected" style="display: none;">
-                        <i class="bi bi-trash-fill"></i></button>
+                        <i class="bi bi-trash-fill"></i><i class="bi bi-ui-checks"></i></button>
                     <!-- <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
                         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" id="chkboxDrop"
                         style="display: none;"></button>

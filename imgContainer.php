@@ -22,6 +22,8 @@
             <div class="card-footer">
                 <button class="btn btn-outline-primary" title="Edit Description">
                     <i class="bi bi-card-text"></i></button>
+                <button class="btn btn-outline-info" title="Replace Image">
+                    <i class="bi bi-image"></i></button>
                 <button class="btn btn-outline-danger" title="Delete">
                     <i class="bi bi-trash-fill"></i></button>
             </div>
