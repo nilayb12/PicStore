@@ -8,7 +8,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you Sure you want to <span style="color: orange;">PERMANENTLY Delete</span> these Images?
+                Are you Sure you want to <span style="color: orange;">PERMANENTLY Delete</span> the Image(s)?
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i> Cancel</button>

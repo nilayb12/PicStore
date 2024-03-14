@@ -30,7 +30,7 @@ session_start();
     <script src="colorToggle.js"></script>
     <?php include('confirmModal.php'); ?>
 
-    <nav class="navbar navbar-expand-md sticky-top bg-secondary-subtle border-bottom border-light-subtle">
+    <nav class="navbar navbar-expand-lg sticky-top bg-secondary-subtle border-bottom border-light-subtle">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img id="brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg">
@@ -49,13 +49,13 @@ session_start();
                         <i class="bi bi-upload"></i></button>
                     <?php include('dbUpload.php'); ?>
                 </form>
-                <ul class="navbar-nav mb-2 mb-lg-0">
+                <ul class="navbar-nav mb-1 mb-lg-0 ms-1 me-1">
                     <li class="nav-item"></li>
                 </ul>
-                <div class="btn-group ms-1 me-1">
-                    <button class="btn btn-outline-primary text-nowrap" id="chkboxToggle" title="Multi-Select Toggle">
+                <div class="!btn-group" style="display: flex;">
+                    <button class="btn btn-outline-primary !text-nowrap" id="chkboxToggle" title="Multi-Select Toggle">
                         <i class="bi bi-ui-checks-grid"></i></button>
-                    <button class="btn btn-outline-success" id="selectAll" title="(De)Select All"
+                    <button class="btn btn-outline-success ms-1 me-1" id="selectAll" title="(De)Select All"
                         style="display: none;"><i class="bi bi-check-square-fill"></i></button>
                     <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delModal"
                         id="deleteBtnLink" title="Delete Selected" style="display: none;">
@@ -76,10 +76,10 @@ session_start();
                         printf("%d Images", iterator_count($fileCount)); ?>
                     </p> -->
                 </div>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mb-1 mb-lg-0 ms-1 me-auto">
                     <li class="nav-item"></li>
                 </ul>
-                <form class="btn-group ms-1" role="search">
+                <form class="btn-group" role="search">
                     <input class="form-control" type="search" id="searchBox" placeholder="Search" aria-label="Search"
                         style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
                     <button class="btn btn-outline-primary" type="submit" title="Search" disabled>
@@ -91,26 +91,7 @@ session_start();
     </nav>
 
     <div id="imgContainer">
-        <form id="imgForm" method="post" action="">
-            <button class="btn" type="submit" name="deleteBtn" id="deleteBtn" style="display: none;"></button>
-            <?php include('dbDelete.php');
-            $query = "SELECT * FROM image";
-            $result = mysqli_query($db, $query);
-
-            while ($data = mysqli_fetch_assoc($result)) {
-                ?>
-                <figure class="figure !card">
-                    <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
-                        value="<?php echo $data['FileName']; ?>" />
-                    <img class="figure-img img-fluid" title="Click to Zoom" src="./images/<?php echo $data['FileName']; ?>">
-                    <figcaption class="figure-caption !card-title">
-                        <?php echo $data['FileName']; ?>
-                    </figcaption>
-                </figure>
-                <?php
-            }
-            ?>
-        </form>
+        <?php include('imgContainer.php'); ?>
     </div>
 
     <nav class="navbar bg-secondary-subtle border-top border-light-subtle !justify-content-center"

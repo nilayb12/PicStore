@@ -29,8 +29,12 @@ input[type=file]::file-selector-button {}
     flex-wrap: wrap;
 }
 
-img {
-    margin: 5px 10px 5px 2px;
+.card {
+    margin: 2px;
+}
+
+.card-img-top {
+    margin-top: 2px;
     cursor: pointer;
 }
 

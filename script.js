@@ -1,10 +1,10 @@
-let imgs = document.getElementsByTagName('img');
-for (const img of imgs) {
-    img.style.height = window.innerHeight / 5 + 'px';
+var figs = document.getElementsByTagName('figure');
+for (const fig of figs) {
+    fig.style.width = window.innerHeight / 2.5 + 'px';
 }
 window.addEventListener('resize', () => {
-    for (const img of imgs) {
-        img.style.height = window.innerHeight / 5 + 'px';
+    for (const fig of imgs) {
+        fig.style.width = window.innerHeight / 2.5 + 'px';
     }
 });
 
@@ -36,9 +36,9 @@ var imgNames = document.querySelectorAll('.figure-caption');
     document.getElementById('searchBox').addEventListener(e, (e) => {
         imgNames.forEach((imgName) => {
             if (!imgName.innerHTML.toLowerCase().includes(e.target.value)) {
-                imgName.parentElement.style.display = 'none';
+                imgName.parentElement.parentElement.style.display = 'none';
             } else {
-                imgName.parentElement.style.display = 'inline-block';
+                imgName.parentElement.parentElement.style.display = 'inline-block';
             }
         });
     });
