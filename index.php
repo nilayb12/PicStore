@@ -53,11 +53,11 @@ session_start();
                     <li class="nav-item"></li>
                 </ul>
                 <div class="!btn-group" style="display: flex;">
-                    <button class="btn btn-outline-primary !text-nowrap" id="chkboxToggle" title="Multi-Select Toggle">
+                    <button class="btn btn-outline-primary" id="chkboxToggle" title="Multi-Select Toggle">
                         <i class="bi bi-ui-checks-grid"></i></button>
                     <button class="btn btn-outline-success ms-1 me-1" id="selectAll" title="(De)Select All"
                         style="display: none;"><i class="bi bi-check-square-fill"></i></button>
-                    <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delModal"
+                    <button class="btn btn-outline-danger text-nowrap" data-bs-toggle="modal" data-bs-target="#delModal"
                         id="deleteBtnLink" title="Delete Selected" style="display: none;">
                         <i class="bi bi-trash-fill"></i><i class="bi bi-ui-checks"></i></button>
                     <!-- <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
