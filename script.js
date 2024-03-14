@@ -1,10 +1,10 @@
 var figs = document.getElementsByTagName('figure');
 for (const fig of figs) {
-    fig.style.width = window.innerHeight / 2.5 + 'px';
+    fig.style.width = window.innerHeight / 2.75 + 'px';
 }
 window.addEventListener('resize', () => {
-    for (const fig of imgs) {
-        fig.style.width = window.innerHeight / 2.5 + 'px';
+    for (const fig of figs) {
+        fig.style.width = window.innerHeight / 2.75 + 'px';
     }
 });
 
