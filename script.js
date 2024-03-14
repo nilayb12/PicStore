@@ -31,14 +31,14 @@ $('#delConfirm').click(function () {
     $("#deleteBtn").click();
 });
 
-var imgNames = document.querySelectorAll('.figure-caption');
+var imgDetails = document.querySelectorAll('.card-body');
 ['keyup', 'click'].forEach(function (e) {
     document.getElementById('searchBox').addEventListener(e, (e) => {
-        imgNames.forEach((imgName) => {
-            if (!imgName.innerHTML.toLowerCase().includes(e.target.value)) {
-                imgName.parentElement.parentElement.style.display = 'none';
+        imgDetails.forEach((imgDetail) => {
+            if (!imgDetail.innerHTML.toLowerCase().includes(e.target.value)) {
+                imgDetail.parentElement.style.display = 'none';
             } else {
-                imgName.parentElement.parentElement.style.display = 'inline-block';
+                imgDetail.parentElement.style.display = 'inline-block';
             }
         });
     });

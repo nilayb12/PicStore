@@ -30,7 +30,7 @@ session_start();
     <script src="colorToggle.js"></script>
     <?php include('confirmModal.php'); ?>
 
-    <nav class="navbar navbar-expand-lg sticky-top bg-secondary-subtle border-bottom border-light-subtle">
+    <nav class="navbar navbar-expand-md sticky-top bg-secondary-subtle border-bottom border-light-subtle">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img id="brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg">
@@ -49,7 +49,7 @@ session_start();
                         <i class="bi bi-upload"></i></button>
                     <?php include('dbUpload.php'); ?>
                 </form>
-                <ul class="navbar-nav mb-1 mb-lg-0 ms-1 me-1">
+                <ul class="navbar-nav mb-1 mb-lg-0">
                     <li class="nav-item"></li>
                 </ul>
                 <div class="!btn-group" style="display: flex;">
@@ -80,8 +80,8 @@ session_start();
                     <li class="nav-item"></li>
                 </ul>
                 <form class="btn-group" role="search">
-                    <input class="form-control" type="search" id="searchBox" placeholder="Search" aria-label="Search"
-                        style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
+                    <input class="form-control" type="search" id="searchBox" placeholder="Global Search"
+                        aria-label="Search" style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
                     <button class="btn btn-outline-primary" type="submit" title="Search" disabled>
                         <i class="bi bi-search"></i></button>
                     <?php include('dbSearch.php'); ?>
