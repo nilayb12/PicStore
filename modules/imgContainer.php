@@ -12,7 +12,7 @@
             <!-- <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
                 value="<!?php echo $data['FileName']; ?>" /> -->
             <img class="!figure-img card-img-top img-fluid" title="Click to Zoom" id="figImg"
-                src="./images/<?php echo $data['FileName']; ?>">
+                src="./<?php echo $data['FilePath']; ?>">
             <div class="card-header">
                 <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
                     value="<?php echo $data['FileName']; ?>" />
