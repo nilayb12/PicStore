@@ -29,15 +29,19 @@ input[type=file]::file-selector-button {}
     flex-wrap: wrap;
 }
 
-.card {
+#figBox {
     margin: 2px;
 }
 
-.card-img-top {
-    margin-top: 2px;
+#figImg {
     cursor: pointer;
 }
 
+#figDetails {
+    height: 10em;
+    overflow: auto;
+}
+
 figcaption {
-    text-align: center;
+    display: inline-block;
 }

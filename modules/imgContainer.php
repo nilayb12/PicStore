@@ -8,10 +8,10 @@
 
     while ($data = mysqli_fetch_assoc($result)) {
         ?>
-        <figure class="!figure card border-secondary">
+        <figure class="!figure card border-secondary" id="figBox">
             <!-- <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
                 value="<!?php echo $data['FileName']; ?>" /> -->
-            <img class="!figure-img card-img-top img-fluid" title="Click to Zoom"
+            <img class="!figure-img card-img-top img-fluid" title="Click to Zoom" id="figImg"
                 src="./images/<?php echo $data['FileName']; ?>">
             <div class="card-header">
                 <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
@@ -20,8 +20,10 @@
                     <?php echo $data['FileName']; ?>
                 </figcaption>
             </div>
-            <div class="card-body">
-                <p class="!card-text figure-caption">Figure Details (to be populated by DB)</p>
+            <div class="card-body" id="figDetails">
+                <p class="!card-text figure-caption">
+                    <?php echo $data['FileDescription']; ?>Figure Details (to be populated by DB)
+                </p>
             </div>
             <div class="card-footer">
                 <button class="btn btn-outline-primary" title="Edit Description">
