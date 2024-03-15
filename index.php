@@ -1,5 +1,5 @@
 <?php
-include_once ('dbConfig.php');
+include_once ('modules/dbConfig.php');
 session_start();
 ?>
 
@@ -28,7 +28,7 @@ session_start();
         integrity="sha512-EC3CQ+2OkM+ZKsM1dbFAB6OGEPKRxi6EDRnZW9ys8LghQRAq6cXPUgXCCujmDrXdodGXX9bqaaCRtwj4h4wgSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="colorToggle.js"></script>
-    <?php include ('confirmModal.php'); ?>
+    <?php include ('modules/confirmModal.php'); ?>
 
     <nav class="navbar navbar-expand-md sticky-top bg-secondary-subtle border-bottom border-light-subtle">
         <div class="container-fluid">
@@ -47,7 +47,7 @@ session_start();
                     <button class="btn btn-outline-primary" type="submit" name="uploadBtn" title="Upload"
                         style="border-top-right-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);">
                         <i class="bi bi-upload"></i></button>
-                    <?php include ('dbUpload.php'); ?>
+                    <?php include ('modules/dbUpload.php'); ?>
                 </form>
                 <ul class="navbar-nav mb-1 mb-lg-0">
                     <li class="nav-item"></li>
@@ -84,14 +84,14 @@ session_start();
                         aria-label="Search" style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
                     <button class="btn btn-outline-primary" type="submit" title="Search" disabled>
                         <i class="bi bi-search"></i></button>
-                    <?php include ('dbSearch.php'); ?>
+                    <?php include ('modules/dbSearch.php'); ?>
                 </form>
             </div>
         </div>
     </nav>
 
     <div id="imgContainer">
-        <?php include ('imgContainer.php'); ?>
+        <?php include ('modules/imgContainer.php'); ?>
     </div>
 
     <nav class="navbar bg-secondary-subtle border-top border-light-subtle !justify-content-center"
