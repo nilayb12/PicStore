@@ -1,11 +1,11 @@
 # PicStore
 An Image Hosting Solution
 ## How to Deploy:
-1. Install XAMPP.
+1. Install [XAMPP](https://www.apachefriends.org/)/[WAMP](https://www.wampserver.com/en/).
 2. Create a DB & Table with your choice of names.
    1. You can also create a User specifically for this Application.
    2. Make sure to give Proper Permissions and Level of Access to this Account.
-3. Make 2 Columns in your Table with `FileName` as the Second Column, and both type TEXT/VARCHAR.
+3. Make 2 Columns in your Table with `FilePath` as the 1st Column & `FileName` as the 2nd, and both type TEXT/VARCHAR.
 4. Clone the Project in `C:\xampp\htdocs`.
 5. Create your own `dbConfig.php` as follows (Remove the existing one):
 ```php
