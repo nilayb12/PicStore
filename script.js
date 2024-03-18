@@ -20,11 +20,35 @@ if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
 
+var chk = document.getElementsByName('imgSelect[]');
 document.getElementById('chkboxToggle').addEventListener('click', () => {
     $('.form-check-input').toggle();
     $('#selectAll').toggle();
     $('#deleteBtnLink').toggle();
     // $('#chkboxDrop').toggle();
+    chk.forEach((chk) => {
+        chk.checked = false;
+    });
+});
+
+document.getElementById('imgCount').innerText = chk.length;
+$('#selectAll').click(function () {
+    // for (var i = 0; i < chk.length; ++i) {
+    //     if (chk[i].checked == false) {
+    //         chk[i].checked = true;
+    //     } else {
+    //         chk[i].checked = false;
+    //     }
+    // }
+    chk.forEach((chk) => {
+        if (chk.checked == false) {
+            chk.checked = true;
+        } else {
+            chk.checked = false;
+        }
+    });
+    $(this).toggleClass('btn-outline-success btn-outline-warning')
+    $(this).find('i').toggleClass('bi-check-square-fill bi-x-square-fill');
 });
 
 $('#delConfirm').click(function () {
@@ -53,23 +77,3 @@ var imgDetails = document.querySelectorAll('.card');
 //         }
 //     })
 // });
-var chk = document.getElementsByName('imgSelect[]');
-document.getElementById('imgCount').innerText = chk.length;
-$('#selectAll').click(function () {
-    // for (var i = 0; i < chk.length; ++i) {
-    //     if (chk[i].checked == false) {
-    //         chk[i].checked = true;
-    //     } else {
-    //         chk[i].checked = false;
-    //     }
-    // }
-    chk.forEach((chk) => {
-        if (chk.checked == false) {
-            chk.checked = true;
-        } else {
-            chk.checked = false;
-        }
-    });
-    $(this).toggleClass('btn-outline-success btn-outline-warning')
-    $(this).find('i').toggleClass('bi-check-square-fill bi-x-square-fill');
-});
