@@ -30,7 +30,7 @@ session_start();
     <script src="colorToggle.js"></script>
     <?php include ('modules/confirmModal.php'); ?>
 
-    <nav class="navbar navbar-expand-md sticky-top bg-secondary-subtle border-bottom border-light-subtle">
+    <nav class="navbar navbar-expand-md sticky-top bg-secondary-subtle border-bottom border-secondary">
         <div class="container-fluid">
             <a class="navbar-brand" href="">
                 <img id="brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg">
@@ -42,7 +42,7 @@ session_start();
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="btn-group me-1" id="uploadForm" method="post" action="" enctype="multipart/form-data">
-                    <input class="form-control" type="file" name="uploadFile[]" accept=".jpg, .jpeg, .png" multiple
+                    <input class="form-control" type="file" name="uploadFile[]" accept="image/*" multiple
                         title="Select Images" style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
                     <button class="btn btn-outline-primary" type="submit" name="uploadBtn" title="Upload"
                         style="border-top-right-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);">
@@ -82,8 +82,7 @@ session_start();
                 <form class="btn-group" role="search">
                     <input class="form-control" type="search" id="searchBox" placeholder="Global Search"
                         aria-label="Search" style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
-                    <button class="btn btn-outline-primary" type="submit" title="Search" disabled>
-                        <i class="bi bi-search"></i></button>
+                    <button class="btn btn-outline-info" title="Search" disabled><i class="bi bi-search"></i></button>
                     <?php include ('modules/dbSearch.php'); ?>
                 </form>
             </div>
@@ -94,7 +93,7 @@ session_start();
         <?php include ('modules/imgContainer.php'); ?>
     </div>
 
-    <nav class="navbar bg-secondary-subtle border-top border-light-subtle !justify-content-center"
+    <nav class="navbar bg-secondary-subtle border-top border-secondary !justify-content-center"
         aria-label="Page Navigation">
         <ul class="pagination">
             <li class="page-item" title="First"><a class="page-link" href="#"><i class="bi bi-chevron-bar-left"></i></a>
