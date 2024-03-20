@@ -33,7 +33,6 @@ document.getElementById('chkboxToggle').addEventListener('click', () => {
     document.getElementById('selectAll').firstChild.classList.replace('bi-x-square-fill', 'bi-check-square-fill');
 });
 
-document.getElementById('imgCount').innerText = chk.length;
 $('#selectAll').click(function () {
     // for (var i = 0; i < chk.length; ++i) {
     //     if (chk[i].checked == false) {
@@ -57,18 +56,30 @@ $('#delConfirm').click(function () {
     $("#deleteBtn").click();
 });
 
+window.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.code === 'KeyK') {
+        e.preventDefault();
+        document.getElementById('searchBox').focus()
+    }
+})
+
 var imgDetails = document.querySelectorAll('.card');
+var cnt = chk.length;
 ['keyup', 'click'].forEach(function (e) {
     document.getElementById('searchBox').addEventListener(e, (e) => {
+        cnt = 0;
         imgDetails.forEach((imgDetail) => {
             if (!imgDetail.innerHTML.toLowerCase().includes(e.target.value)) {
                 imgDetail.style.display = 'none';
             } else {
                 imgDetail.style.display = 'inline-block';
+                cnt += 1;
             }
         });
+        document.getElementById('imgCount').innerText = cnt;
     });
 });
+document.getElementById('imgCount').innerText = cnt;
 // $('#uplConfirm').click(function () {
 //     $.ajax({
 //         type: "POST",
