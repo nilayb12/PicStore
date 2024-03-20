@@ -29,6 +29,8 @@ document.getElementById('chkboxToggle').addEventListener('click', () => {
     chk.forEach((chk) => {
         chk.checked = false;
     });
+    document.getElementById('selectAll').classList.replace('btn-outline-warning', 'btn-outline-success');
+    document.getElementById('selectAll').firstChild.classList.replace('bi-x-square-fill', 'bi-check-square-fill');
 });
 
 document.getElementById('imgCount').innerText = chk.length;
@@ -60,9 +62,9 @@ var imgDetails = document.querySelectorAll('.card');
     document.getElementById('searchBox').addEventListener(e, (e) => {
         imgDetails.forEach((imgDetail) => {
             if (!imgDetail.innerHTML.toLowerCase().includes(e.target.value)) {
-                imgDetail/*.parentElement*/.style.display = 'none';
+                imgDetail.style.display = 'none';
             } else {
-                imgDetail/*.parentElement*/.style.display = 'inline-block';
+                imgDetail.style.display = 'inline-block';
             }
         });
     });
