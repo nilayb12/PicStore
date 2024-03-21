@@ -41,11 +41,11 @@ session_start();
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="btn-group me-1" id="uploadForm" method="post" action="" enctype="multipart/form-data">
+                <form class="input-group me-1" id="uploadForm" method="post" action="" enctype="multipart/form-data"
+                    style="width: auto;">
                     <input class="form-control" type="file" name="uploadFile[]" accept="image/*" multiple
-                        title="Select Images" style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
-                    <button class="btn btn-outline-primary" type="submit" name="uploadBtn" title="Upload"
-                        style="border-top-right-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);">
+                        title="Select Images" />
+                    <button class="btn btn-outline-primary" type="submit" name="uploadBtn" title="Upload">
                         <i class="bi bi-upload"></i></button>
                     <?php include ('modules/dbUpload.php'); ?>
                 </form>
@@ -79,9 +79,10 @@ session_start();
                 <ul class="navbar-nav mb-1 mb-lg-0 ms-1 me-auto">
                     <li class="nav-item"></li>
                 </ul>
-                <form class="btn-group" role="search">
-                    <input class="form-control" type="search" id="searchBox" placeholder="Global Search (Ctrl/Cmd + K)"
-                        aria-label="Search" style="border-top-right-radius: 0; border-bottom-right-radius: 0;" />
+                <form class="input-group" role="search" style="width: auto;">
+                    <label class="input-group-text">Search</label>
+                    <input class="form-control" type="search" id="searchBox" placeholder="Ctrl/Cmd + K to Toggle"
+                        aria-label="Search" />
                     <button class="btn btn-outline-info" title="Search" disabled><i class="bi bi-search"></i></button>
                     <?php include ('modules/dbSearch.php'); ?>
                 </form>
