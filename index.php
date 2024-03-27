@@ -53,8 +53,8 @@ session_start();
                     <li class="nav-item"></li>
                 </ul>
                 <div class="!btn-group" style="display: flex;">
-                    <button class="btn btn-outline-primary" id="chkboxToggle" title="Multi-Select Toggle">
-                        <i class="bi bi-ui-checks-grid"></i></button>
+                    <button class="btn btn-outline-primary" data-bs-toggle="button" id="chkboxToggle"
+                        title="Multi-Select Toggle"><i class="bi bi-ui-checks-grid"></i></button>
                     <button class="btn btn-outline-success ms-1 me-1" id="selectAll" title="(De)Select All"
                         style="display: none;"><i class="bi bi-check-square-fill"></i></button>
                     <button class="btn btn-outline-danger text-nowrap" data-bs-toggle="modal" data-bs-target="#delModal"
@@ -80,10 +80,10 @@ session_start();
                     <li class="nav-item"></li>
                 </ul>
                 <form class="input-group" role="search" style="width: auto;">
-                    <label class="input-group-text">Search</label>
-                    <input class="form-control" type="search" id="searchBox" placeholder="Ctrl/Cmd + K to Toggle"
+                    <input class="form-control" type="search" id="searchBox" placeholder="Ctrl/Cmd + K"
                         aria-label="Search" />
-                    <button class="btn btn-outline-info" title="Search" disabled><i class="bi bi-search"></i></button>
+                    <label class="input-group-text" title="Global Search"><i class="bi bi-search"></i></label>
+                    <!-- <button class="btn btn-outline-info" title="Search" disabled><i class="bi bi-search"></i></button> -->
                     <?php include ('modules/dbSearch.php'); ?>
                 </form>
             </div>
