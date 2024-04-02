@@ -36,10 +36,9 @@
                     <button class="btn btn-sm btn-outline-primary" title="Upload">
                         <i class="bi bi-upload"></i></button>
                 </div>
-                <button class="btn btn-sm btn-outline-danger"
-                    name="delete<?php echo str_replace(' ', '', $data['FileName']); ?>" title="Delete">
+                <button class="btn btn-sm btn-outline-danger" name="delete<?php $data['FileName']; ?>" title="Delete">
                     <i class="bi bi-trash-fill"></i></button>
-                <?php if (isset ($_POST['delete' . str_replace(' ', '', $data['FileName'])])) {
+                <?php if (isset($_POST[$data['FileName']])) {
                     $tmp = $data['FileName'];
                     $sql = "DELETE FROM image WHERE FileName IN ('$tmp')";
                     mysqli_query($db, $sql);
