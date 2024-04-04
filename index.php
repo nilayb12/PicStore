@@ -4,7 +4,7 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
 
 <head>
     <link rel="icon" type="image/png" sizes="96x96" href="https://img.icons8.com/dusk/64/000000/upload--v1.png">
@@ -28,7 +28,8 @@ session_start();
         integrity="sha512-EC3CQ+2OkM+ZKsM1dbFAB6OGEPKRxi6EDRnZW9ys8LghQRAq6cXPUgXCCujmDrXdodGXX9bqaaCRtwj4h4wgSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="colorToggle.js"></script>
-    <?php include ('modules/confirmModal.php'); ?>
+    <?php include ('modules/confirmModal.php');
+    include ('modules/colorToggle.php'); ?>
 
     <nav class="navbar navbar-expand-md sticky-top bg-secondary-subtle border-bottom border-secondary">
         <div class="container-fluid">
@@ -95,7 +96,7 @@ session_start();
     </div>
 
     <nav class="navbar bg-secondary-subtle border-top border-secondary !justify-content-center"
-        aria-label="Page Navigation">
+        aria-label="Page Navigation" style="z-index: 1020;">
         <ul class="pagination">
             <li class="page-item" title="First"><a class="page-link" href="#"><i class="bi bi-chevron-bar-left"></i></a>
             </li>

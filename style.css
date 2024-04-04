@@ -51,6 +51,31 @@
     --bs-body-bg: black !important;
 }
 
+.btn-bd-primary.btn-bd-primary {
+    --bd-violet-bg: #3a7754;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #2a6845;
+    --bs-btn-hover-border-color: #2a6845;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #1e4831;
+    --bs-btn-active-border-color: #1e4831;
+}
+
+.bd-mode-toggle {
+    z-index: 1000;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}
+
 #brand-logo, #app-logo {
     max-height: 32px;
     margin: 0;
@@ -111,6 +136,15 @@ input[type=file]::file-selector-button {
             color-stop(0.33, #5f2e59),
             color-stop(0.67, #734674),
             color-stop(1, #925784));
+}
+
+#figDetails::-webkit-scrollbar-thumb:hover {
+    background-image: -webkit-gradient(linear,
+            left bottom,
+            left top,
+            color-stop(0.33, #734674),
+            color-stop(0.67, #925784),
+            color-stop(1, #e2bfd8));
 }
 
 figcaption {
