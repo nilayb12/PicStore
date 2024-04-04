@@ -69,7 +69,7 @@ var cnt = chk.length;
     document.getElementById('searchBox').addEventListener(e, (e) => {
         cnt = 0;
         imgDetails.forEach((imgDetail) => {
-            if (!imgDetail.innerHTML.toLowerCase().includes(e.target.value)) {
+            if (!imgDetail.innerHTML.toLowerCase().includes(e.target.value.toLowerCase())) {
                 imgDetail.style.display = 'none';
             } else {
                 imgDetail.style.display = 'inline-block';

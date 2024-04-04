@@ -53,9 +53,10 @@ session_start();
                 <ul class="navbar-nav mb-1 mb-lg-0">
                     <li class="nav-item"></li>
                 </ul>
-                <div class="!btn-group" style="display: flex;">
-                    <button class="btn btn-outline-primary" data-bs-toggle="button" id="chkboxToggle"
-                        title="Multi-Select Toggle"><i class="bi bi-ui-checks-grid"></i></button>
+                <div class="!btn-group d-flex">
+                    <button class="btn btn-outline-primary text-nowrap" data-bs-toggle="button" id="chkboxToggle"
+                        title="Multi-Select Toggle"><i class="bi bi-ui-checks-grid"></i>
+                        <i class="bi bi-box-arrow-right"></i></button>
                     <button class="btn btn-outline-success ms-1 me-1" id="selectAll" title="(De)Select All"
                         style="display: none;"><i class="bi bi-check-square-fill"></i></button>
                     <button class="btn btn-outline-danger text-nowrap" data-bs-toggle="modal" data-bs-target="#delModal"

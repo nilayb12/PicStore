@@ -15,10 +15,10 @@
                 src="./<?php echo $data['FilePath']; ?>">
             <div class="card-header">
                 <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
-                    value="<?php echo $data['FileName']; ?>" />
-                <figcaption class="figure-caption !card-title">
+                    value="<?php echo $data['FileName']; ?>" id="<?php echo $data['FileName']; ?>" />
+                <label class="figure-caption !card-title" for="<?php echo $data['FileName']; ?>">
                     <?php echo $data['FileName']; ?>
-                </figcaption>
+                </label>
             </div>
             <div class="card-body" id="figDetails">
                 <p class="!card-text figure-caption">
