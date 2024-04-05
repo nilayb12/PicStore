@@ -37,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     if (mysqli_stmt_fetch($stmt)) {
 
+                        // if (password_verify($password, $hashed_password)) {
                         if (strcmp($password, $hashed_password) == 0) {
                             session_start();
                             $_SESSION["loggedin"] = true;
@@ -73,9 +74,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="stylesheet" type="text/css" href="login.css">
 
     <style>
+        html, body {
+            height: 100%;
+        }
+
+        .form-signin {
+            max-width: 330px;
+            padding: 1rem;
+        }
+
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -147,8 +160,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg" alt=""
-                width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                width="64" height="64">
+            <img class="mb-4" src="../Image DB-logos_white_Edit.png" alt="" height="64">
+            <h1 class="h3 mb-3 fw-normal">Sign in</h1>
 
             <div class="form-floating mb-1">
                 <input type="text" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
