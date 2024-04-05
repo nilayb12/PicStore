@@ -1,6 +1,10 @@
-<?php
+<?php session_start();
 include_once ('modules/dbConfig.php');
-session_start();
+
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: LoginSystem/login.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -88,6 +92,8 @@ session_start();
                     <!-- <button class="btn btn-outline-info" title="Search" disabled><i class="bi bi-search"></i></button> -->
                     <?php include ('modules/dbSearch.php'); ?>
                 </form>
+                <a class="btn btn-outline-danger ms-1" id="logout" title="Logout" href="LoginSystem/logout.php">
+                    <i class="bi bi-x"></i></i></a>
             </div>
         </div>
     </nav>
