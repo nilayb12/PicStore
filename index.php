@@ -2,7 +2,7 @@
 include_once ('modules/dbConfig.php');
 
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: LoginSystem/login.php");
+    header("location: Login/");
     exit;
 }
 ?>
@@ -31,7 +31,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.js"
         integrity="sha512-EC3CQ+2OkM+ZKsM1dbFAB6OGEPKRxi6EDRnZW9ys8LghQRAq6cXPUgXCCujmDrXdodGXX9bqaaCRtwj4h4wgSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="colorToggle.js"></script>
+    <script src="JS/colorToggle.js"></script>
     <?php include ('modules/confirmModal.php');
     include ('modules/colorToggle.php'); ?>
 
@@ -92,7 +92,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <!-- <button class="btn btn-outline-info" title="Search" disabled><i class="bi bi-search"></i></button> -->
                     <?php include ('modules/dbSearch.php'); ?>
                 </form>
-                <a class="btn btn-outline-danger ms-1" id="logout" title="Logout" href="LoginSystem/logout.php">
+                <a class="btn btn-outline-danger ms-1" id="logout" title="Logout" href="Login/logout.php">
                     <i class="bi bi-x"></i></i></a>
             </div>
         </div>
@@ -117,7 +117,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </ul>
         <p class="alert alert-primary">Showing <span id="imgCount">x</span> Images</p>
     </nav>
-    <script src="script.js"></script>
+    <script src="JS/script.js"></script>
 </body>
 
 </html>

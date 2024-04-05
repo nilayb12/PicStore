@@ -1,7 +1,7 @@
 <?php session_start();
 
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: ../index.php");
+    header("location: ../");
     exit;
 }
 include_once ('../modules/dbConfig.php');
@@ -11,13 +11,13 @@ $username_err = $password_err = $login_err = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty(trim($_POST["username"]))) {
-        $username_err = "Please enter username.";
+        $username_err = "Please enter Username.";
     } else {
         $username = trim($_POST["username"]);
     }
 
     if (empty(trim($_POST["password"]))) {
-        $password_err = "Please enter your password.";
+        $password_err = "Please enter your Password.";
     } else {
         $password = trim($_POST["password"]);
     }
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
-                            header("location: ../index.php");
+                            header("location: ../");
                         } else {
                             $login_err = "Invalid Password.";
                         }
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $login_err = "User doesn't Exist.";
                 }
             } else {
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Oops! Something went Wrong. Please Try again Later.";
             }
             mysqli_stmt_close($stmt);
         }
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../colorToggle.js"></script>
+    <script src="../JS/colorToggle.js"></script>
     <title>User Sign-In</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -132,6 +132,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body class="d-flex align-items-center py-4">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <?php include ('../modules/colorToggle.php'); ?>
 
     <main class="form-signin w-100 m-auto">
@@ -147,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-            <div class="form-floating">
+            <div class="form-floating mb-1">
                 <input type="text" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
                     name="username" id="floatingInput" value="<?php echo $username; ?>"
                     placeholder="firstname.lastname">
@@ -177,9 +180,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p class="mt-5 mb-3 text-body-secondary"><i class="bi bi-c-circle"></i> 19xx–2024</p>
         </form>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
