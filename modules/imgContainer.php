@@ -1,7 +1,7 @@
 <?php include_once ('dbConfig.php') ?>
 
 <form id="imgForm" method="post" action="" enctype="multipart/form-data">
-    <button class="btn" type="submit" name="deleteBtn" id="deleteBtn" style="display: none;"></button>
+    <button class="btn" name="deleteBtn" id="deleteBtn" style="display: none;"></button>
     <?php include ('dbDeleteSelected.php');
     $query = "SELECT * FROM image";
     $result = mysqli_query($db, $query);

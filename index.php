@@ -46,7 +46,7 @@ session_start();
                     style="width: auto;">
                     <input class="form-control" type="file" name="uploadFile[]" accept="image/*" multiple
                         title="Select Images" />
-                    <button class="btn btn-outline-primary" type="submit" name="uploadBtn" title="Upload">
+                    <button class="btn btn-outline-primary" name="uploadBtn" title="Upload">
                         <i class="bi bi-upload"></i></button>
                     <?php include ('modules/dbUpload.php'); ?>
                 </form>
@@ -55,7 +55,7 @@ session_start();
                 </ul>
                 <div class="!btn-group d-flex">
                     <button class="btn btn-outline-primary text-nowrap" data-bs-toggle="button" id="chkboxToggle"
-                        title="Multi-Select Toggle"><i class="bi bi-ui-checks-grid"></i>
+                        title="Multi-Select Toggle (Click for More Options)"><i class="bi bi-ui-checks-grid"></i>
                         <i class="bi bi-box-arrow-right"></i></button>
                     <button class="btn btn-outline-success ms-1 me-1" id="selectAll" title="(De)Select All"
                         style="display: none;"><i class="bi bi-check-square-fill"></i></button>

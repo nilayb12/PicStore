@@ -20,8 +20,8 @@
 </svg>
 
 <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-    <button class="btn btn-bd-primary dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
-        aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+    <button class="btn btn-bd-primary dropdown-toggle d-flex align-items-center" id="bd-theme" aria-expanded="false"
+        data-bs-toggle="dropdown" aria-label="Toggle theme (auto)" title="Toggle Theme">
         <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
             <use href="#circle-half"></use>
         </svg>
