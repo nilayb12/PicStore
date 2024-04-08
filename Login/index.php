@@ -163,7 +163,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg" alt=""
                 width="64" height="64">
-            <img class="mb-4" src="../Image DB-logos_white_Edit.png" alt="" height="64">
             <h1 class="h3 mb-3 fw-normal">Sign in</h1>
 
             <div class="form-floating mb-1">
