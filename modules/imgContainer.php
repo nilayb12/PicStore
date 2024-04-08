@@ -3,7 +3,8 @@
 <form id="imgForm" method="post" action="" enctype="multipart/form-data">
     <button class="btn" name="deleteBtn" id="deleteBtn" style="display: none;"></button>
     <?php include ('dbDeleteSelected.php');
-    $query = "SELECT * FROM image";
+    $sessUser = $_SESSION["username"];
+    $query = "SELECT * FROM image WHERE UserName IN ('$sessUser')";
     $result = mysqli_query($db, $query);
 
     while ($data = mysqli_fetch_assoc($result)) {
@@ -12,7 +13,7 @@
             <!-- <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
                 value="<!?php echo $data['FileName']; ?>" /> -->
             <img class="!figure-img card-img-top img-fluid" title="Click to Zoom" id="figImg"
-                src="./<?php echo $data['FilePath']; ?>">
+                src="images/<?php echo $sessUser; ?>/<?php echo $data['FileName']; ?>">
             <div class="card-header">
                 <input class="form-check-input" type="checkbox" name="imgSelect[]" style="display: none;"
                     value="<?php echo $data['FileName']; ?>" id="<?php echo $data['FileName']; ?>" />

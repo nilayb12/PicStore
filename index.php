@@ -5,6 +5,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: Login/");
     exit;
 }
+
+if (!file_exists($_SESSION["username"])) {
+    @mkdir('images/' . $_SESSION["username"], 0777, true);
+}
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +97,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <?php include ('modules/dbSearch.php'); ?>
                 </form>
                 <a class="btn btn-outline-danger ms-1" id="logout" title="Logout" href="Login/logout.php">
-                    <i class="bi bi-x"></i></i></a>
+                    <i class="bi bi-door-open-fill"></i></a>
             </div>
         </div>
     </nav>

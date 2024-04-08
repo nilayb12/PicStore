@@ -1,15 +1,16 @@
 <?php
 include_once ('dbConfig.php');
 
-if (isset ($_POST['uploadBtn'])) {
+if (isset($_POST['uploadBtn'])) {
     for ($i = 0; $i < count($_FILES['uploadFile']['name']); ++$i) {
 
         $fileName = $_FILES['uploadFile']['name'][$i];
         $tmpName = $_FILES['uploadFile']['tmp_name'][$i];
-        $filePath = 'images/' . $fileName;
+        $userName = $_SESSION["username"];
+        $filePath = 'images/' . $userName . '/' . $fileName;
 
-        if (!empty ($fileName)) {
-            $sql = "INSERT INTO image (FilePath, FileName) VALUES (('$filePath'),('$fileName'))";
+        if (!empty($fileName)) {
+            $sql = "INSERT INTO image (UserName, FileName) VALUES (('$userName'),('$fileName'))";
             if (file_exists($filePath)) {
                 echo "<script type='text/javascript'>
                     $(document).ready(function(){
