@@ -99,34 +99,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         crossorigin="anonymous"></script>
     <?php include ('../modules/colorToggle.php'); ?>
 
-    <main class="form-signin w-100 m-auto">
+    <main class="form-signin m-auto">
         <h1 class="h3 mb-3 fw-normal">Create Account</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-floating mb-1">
-                <input type="text" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
-                    name="username" id="floatingInput" value="<?php echo $username; ?>"
-                    placeholder="firstname.lastname">
-                <label for="floatingInput">User ID</label>
-                <span class="invalid-feedback">
-                    <?php echo $username_err; ?>
-                </span>
+            <div class="input-group mb-1">
+                <div class="form-floating me-1">
+                    <input type="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>"
+                        name="email" id="floatingEmail" placeholder="firstname.lastname@ril.com">
+                    <label for="floatingEmail">Email Address</label>
+                    <span class="invalid-feedback">
+                        <?php echo $email_err; ?>
+                    </span>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
+                        name="username" id="floatingInput" value="<?php echo $username; ?>"
+                        placeholder="firstname.lastname">
+                    <label for="floatingInput">User ID</label>
+                    <span class="invalid-feedback">
+                        <?php echo $username_err; ?>
+                    </span>
+                </div>
             </div>
-            <div class="form-floating mb-1">
-                <input type="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
-                    name="password" id="floatingPassword" value="<?php echo $password; ?>" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-                <span class="invalid-feedback">
-                    <?php echo $password_err; ?>
-                </span>
+            <div class="input-group mb-1">
+                <div class="form-floating me-1">
+                    <input type="password"
+                        class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" name="password"
+                        id="floatingPassword" value="<?php echo $password; ?>" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                    <span class="invalid-feedback">
+                        <?php echo $password_err; ?>
+                    </span>
+                </div>
+                <div class="form-floating">
+                    <input type="password"
+                        class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>"
+                        name="confirm_password" id="floatingConfirmPass" value="<?php echo $confirm_password; ?>"
+                        placeholder="Re-Enter Password">
+                    <label for="floatingConfirmPass">Confirm Password</label>
+                    <span class="invalid-feedback">
+                        <?php echo $confirm_password_err; ?>
+                    </span>
+                </div>
             </div>
-            <div class="form-floating">
-                <input type="password"
-                    class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>"
-                    name="confirm_password" id="floatingConfirmPass" value="<?php echo $confirm_password; ?>"
-                    placeholder="Re-Enter Password">
-                <label for="floatingConfirmPass">Confirm Password</label>
+            <div class="input-group mb-1">
+                <span class="input-group-text">+91</span>
+                <div class="form-floating">
+                    <input type="tel" class="form-control <?php echo (!empty($phoneno_err)) ? 'is-invalid' : ''; ?>"
+                        name="phoneno" id="floatingPhoneno" placeholder="0123456789" maxlength="10">
+                    <label for="floatingPhoneno">Phone Number</label>
+                </div>
                 <span class="invalid-feedback">
-                    <?php echo $confirm_password_err; ?>
+                    <?php echo $phoneno_err; ?>
                 </span>
             </div>
             <div class="d-flex my-3">
@@ -134,6 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button class="btn btn-danger w-50" type="reset" value="Reset">Reset</button>
             </div>
             <p>Already have an account? <a class="badge text-bg-info" href="../Login/">Login Instead</a></p>
+            <p class="mt-5 mb-3 text-body-secondary"><i class="bi bi-c-circle"></i> 19xx–2024</p>
         </form>
     </main>
 </body>
