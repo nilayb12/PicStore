@@ -125,7 +125,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button class="btn btn-primary w-50 me-1" type="submit" value="Login">Sign In</button>
                 <button class="btn btn-danger w-50" type="reset" value="Reset">Reset</button>
             </div>
-            <p>No account? <a class="badge text-bg-info" href="../Register/">Register Here</a></p>
+            <p>New Users <a class="badge text-bg-info link-underline link-underline-opacity-0"
+                    href="../Register/">Register Here</a></p>
             <p class="mt-5 mb-3 text-body-secondary"><i class="bi bi-c-circle"></i> 19xx–2024</p>
         </form>
     </main>

@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $confirm_password = trim($_POST["confirm_password"]);
         if (empty($password_err) && ($password != $confirm_password)) {
-            $confirm_password_err = "Password doesn't match.";
+            $confirm_password_err = "Password doesn't Match.";
         }
     }
 
@@ -100,6 +100,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include ('../modules/colorToggle.php'); ?>
 
     <main class="form-signin m-auto">
+        <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg" alt=""
+            width="64" height="64">
         <h1 class="h3 mb-3 fw-normal">Create Account</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="input-group mb-1">
@@ -157,7 +159,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button class="btn btn-primary w-50 me-1" type="submit" value="Register">Register</button>
                 <button class="btn btn-danger w-50" type="reset" value="Reset">Reset</button>
             </div>
-            <p>Already have an account? <a class="badge text-bg-info" href="../Login/">Login Instead</a></p>
+            <p>Existing Users <a class="badge text-bg-info link-underline link-underline-opacity-0"
+                    href="../Login/">Login Here</a></p>
             <p class="mt-5 mb-3 text-body-secondary"><i class="bi bi-c-circle"></i> 19xx–2024</p>
         </form>
     </main>
