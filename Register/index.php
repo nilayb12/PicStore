@@ -1,14 +1,45 @@
 <?php include_once ('../modules/dbConfig.php');
 
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
+$email = $username = $password = $confirm_password = $phone_no = "";
+$email_err = $username_err = $password_err = $confirm_password_err = $phone_no_err = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    // --------------Email Validation
+    if (empty(trim($_POST["email"]))) {
+        $email_err = "Please Enter your Email Address.";
+    } elseif (!preg_match('/^[a-zA-Z0-9]+\.[a-zA-Z]+@[a-zA-Z]+\.[a-z]+$/', trim($_POST["email"]))) {
+        $email_err = "Email Address Format: [User ID]@ril.com";
+    } else {
+        $sql = "SELECT ID FROM users WHERE Email = ?";
+
+        if ($stmt = mysqli_prepare($db, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $param_email);
+
+            $param_email = trim($_POST["email"]);
+
+            if (mysqli_stmt_execute($stmt)) {
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+
+                if (mysqli_stmt_num_rows($stmt) == 1) {
+                    $email_err = "This Email already Exists.";
+                } else {
+                    $email = trim($_POST["email"]);
+                }
+            } else {
+                echo "Oops! Something went Wrong. Please Try Again later.";
+            }
+
+            mysqli_stmt_close($stmt);
+        }
+    }
+
+    // --------------Username Validation
     if (empty(trim($_POST["username"]))) {
         $username_err = "Please Enter a Username.";
-    } elseif (!preg_match('/^[a-zA-Z0-9._]+$/', trim($_POST["username"]))) {
-        $username_err = "Username can only contain Letters (A-Z, a-z), Numbers (0-9), and Dot (.)";
+    } elseif (!preg_match('/^[a-zA-Z0-9]+\.[a-zA-Z]+$/', trim($_POST["username"]))) {
+        $username_err = "Username Format: [FirstName].[LastName][Number]";
     } else {
         $sql = "SELECT ID FROM users WHERE UserName = ?";
 
@@ -34,6 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    // --------------Password Validation
     if (empty(trim($_POST["password"]))) {
         $password_err = "Please Enter a Password.";
     } elseif (strlen(trim($_POST["password"])) < 8) {
@@ -42,6 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = trim($_POST["password"]);
     }
 
+    // --------------Confirm Password
     if (empty(trim($_POST["confirm_password"]))) {
         $confirm_password_err = "Please Confirm Password.";
     } else {
@@ -51,15 +84,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
+    // --------------Phone Number Validation
+    if (empty(trim($_POST["phone_no"]))) {
+        $phone_no_err = "Please Enter your Phone Number.";
+    } elseif (strlen(trim($_POST["phone_no"])) < 10) {
+        $phone_no_err = "Phone Number must have 10 Digits.";
+    } else {
+        $phone_no = trim($_POST["phone_no"]);
+    }
+    // --------------Insert Values to DB
+    if (
+        empty($email_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err)
+        && empty($phone_no_err)
+    ) {
 
-        $sql = "INSERT INTO users (UserName, Password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (UserName, Email, Password, PhoneNo) VALUES (?, ?, ?, ?)";
 
         if ($stmt = mysqli_prepare($db, $sql)) {
-            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+            mysqli_stmt_bind_param($stmt, "sssi", $param_username, $param_email, $param_password, $param_phone_no);
 
+            $param_email = $email;
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT);
+            $param_phone_no = $phone_no;
 
             if (mysqli_stmt_execute($stmt)) {
                 header("location: ../Login/");
@@ -107,7 +154,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="input-group mb-1">
                 <div class="form-floating me-1">
                     <input type="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>"
-                        name="email" id="floatingEmail" placeholder="firstname.lastname@ril.com">
+                        name="email" id="floatingEmail" value="<?php echo $email; ?>"
+                        placeholder="firstname.lastname@ril.com">
                     <label for="floatingEmail">Email Address</label>
                     <span class="invalid-feedback">
                         <?php echo $email_err; ?>
@@ -144,20 +192,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </span>
                 </div>
             </div>
-            <div class="input-group mb-1">
+            <div class="input-group">
                 <span class="input-group-text">+91</span>
                 <div class="form-floating">
-                    <input type="tel" class="form-control <?php echo (!empty($phoneno_err)) ? 'is-invalid' : ''; ?>"
-                        name="phoneno" id="floatingPhoneno" placeholder="0123456789" maxlength="10">
-                    <label for="floatingPhoneno">Phone Number</label>
+                    <input type="tel" class="form-control <?php echo (!empty($phone_no_err)) ? 'is-invalid' : ''; ?>"
+                        name="phone_no" id="floatingPhoneNo" value="<?php echo $phone_no; ?>" placeholder="Phone Number"
+                        maxlength="10">
+                    <label for="floatingPhoneNo">Phone Number</label>
+                    <span class="invalid-feedback">
+                        <?php echo $phone_no_err; ?>
+                    </span>
                 </div>
-                <span class="invalid-feedback">
-                    <?php echo $phoneno_err; ?>
-                </span>
             </div>
             <div class="d-flex my-3">
                 <button class="btn btn-primary w-50 me-1" type="submit" value="Register">Register</button>
-                <button class="btn btn-danger w-50" type="reset" value="Reset">Reset</button>
+                <a class="btn btn-danger w-50" value="Reset" href="./">Reset</a>
             </div>
             <p>Existing Users <a class="badge text-bg-info link-underline link-underline-opacity-0"
                     href="../Login/">Login Here</a></p>
