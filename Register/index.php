@@ -92,6 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $phone_no = trim($_POST["phone_no"]);
     }
+
     // --------------Insert Values to DB
     if (
         empty($email_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err)
@@ -129,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="../JS/colorToggle.js"></script>
-    <title>User Sign-In</title>
+    <title>User Registration</title>
     <link rel="icon" type="image/png" sizes="64x64"
         href="https://img.icons8.com/external-yogi-aprelliyanto-outline-color-yogi-aprelliyanto/64/000000/external-login-website-development-yogi-aprelliyanto-outline-color-yogi-aprelliyanto.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -144,7 +145,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <?php include ('../modules/colorToggle.php'); ?>
+    <?php include ('../modules/colorToggle.php');
+    include ('confirmRegister.php'); ?>
 
     <main class="form-signin m-auto">
         <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg" alt=""
@@ -205,7 +207,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
             <div class="d-flex my-3">
-                <button class="btn btn-primary w-50 me-1" type="submit" value="Register">Register</button>
+                <button class="btn btn-primary w-50 me-1" type="button" data-bs-toggle="modal"
+                    data-bs-target="#regModal">Register</button>
+                <button class="btn d-none" type="submit" id="registerBtn" value="Register"></button>
                 <a class="btn btn-danger w-50" value="Reset" href="./">Reset</a>
             </div>
             <p>Existing Users <a class="badge text-bg-info link-underline link-underline-opacity-0"
@@ -213,6 +217,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p class="mt-5 mb-3 text-body-secondary"><i class="bi bi-c-circle"></i> 19xx–2024</p>
         </form>
     </main>
+
+    <script type='text/javascript'>
+        document.getElementById('regConfirm').addEventListener('click', () => {
+            document.getElementById('registerBtn').click();
+        });
+    </script>
 </body>
 
 </html>
