@@ -115,7 +115,7 @@ if (!file_exists($_SESSION["username"])) {
 
     <nav class="navbar bg-secondary-subtle border-top border-secondary !justify-content-center"
         aria-label="Page Navigation" style="z-index: 1001;">
-        <ul class="pagination">
+        <!-- <ul class="pagination">
             <li class="page-item" title="First"><a class="page-link" href="#"><i class="bi bi-chevron-bar-left"></i></a>
             </li>
             <li class="page-item" title="Previous"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
@@ -125,7 +125,7 @@ if (!file_exists($_SESSION["username"])) {
             </li>
             <li class="page-item" title="Last"><a class="page-link" href="#"><i class="bi bi-chevron-bar-right"></i></a>
             </li>
-        </ul>
+        </ul> -->
         <p class="alert alert-primary">Showing <span id="imgCount">x</span> Images</p>
     </nav>
     <script src="JS/script.js"></script>
